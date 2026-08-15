@@ -1,0 +1,238 @@
+[
+  {
+    "level": 1,
+    "name": "reachability_definition",
+    "items": [
+      {
+        "item": "reachability_definition::level1",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_definition.rs:1:1: 44:2"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_definition::level1::level2::make_holder",
+        "usages": [
+          {
+            "reachability": "Call",
+            "spans": [
+              "$DIR/reachability_definition.rs:48:13: 48:40"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_definition::level1::use_fields",
+        "usages": [
+          {
+            "reachability": "Call",
+            "spans": [
+              "$DIR/reachability_definition.rs:47:5: 47:23"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_definition::main",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_definition.rs:46:1: 49:2"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_definition::std",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "no-location"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_definition::{use#0}",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "no-location"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_definition"
+  },
+  {
+    "level": 2,
+    "name": "reachability_definition::level1",
+    "items": [
+      {
+        "item": "reachability_definition::level1::Bits",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_definition.rs:29:20: 29:33"
+            ]
+          },
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_definition.rs:12:5: 15:6"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_definition::level1::Point",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_definition.rs:18:17: 18:37",
+              "$DIR/reachability_definition.rs:22:16: 22:36"
+            ]
+          },
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_definition.rs:2:5: 5:6"
+            ]
+          },
+          {
+            "reachability": "TypeAnnotation",
+            "spans": [
+              "$DIR/reachability_definition.rs:8:18: 8:23",
+              "$DIR/reachability_definition.rs:9:14: 9:19",
+              "$DIR/reachability_definition.rs:9:21: 9:26"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_definition::level1::Shape",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_definition.rs:7:5: 10:6"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_definition::level1::Shape::Dot",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_definition.rs:21:17: 23:10"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_definition::level1::Shape::Pair",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_definition.rs:26:13: 26:24"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_definition::level1::level2",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_definition.rs:33:5: 43:6"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_definition::level1::use_fields",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_definition.rs:17:5: 31:6"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_definition"
+  },
+  {
+    "level": 3,
+    "name": "reachability_definition::level1::level2",
+    "items": [
+      {
+        "item": "reachability_definition::level1::Point",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_definition.rs:40:20: 40:49"
+            ]
+          },
+          {
+            "reachability": "TypeAnnotation",
+            "spans": [
+              "$DIR/reachability_definition.rs:35:20: 35:32"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_definition::level1::level2::Holder",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_definition.rs:39:13: 41:14"
+            ]
+          },
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_definition.rs:34:9: 36:10"
+            ]
+          },
+          {
+            "reachability": "TypeAnnotation",
+            "spans": [
+              "$DIR/reachability_definition.rs:38:33: 38:39"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_definition::level1::level2::make_holder",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_definition.rs:38:9: 42:10"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_definition::level1"
+  }
+]

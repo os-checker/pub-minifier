@@ -1,0 +1,182 @@
+[
+  {
+    "level": 1,
+    "name": "reachability_construct",
+    "items": [
+      {
+        "item": "reachability_construct::ctor",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_construct.rs:1:1: 13:2"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_construct::ctor::E::N",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_construct.rs:22:13: 22:32"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_construct::ctor::E::T",
+        "usages": [
+          {
+            "reachability": "Call",
+            "spans": [
+              "$DIR/reachability_construct.rs:21:13: 21:23"
+            ]
+          },
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_construct.rs:21:13: 21:23"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_construct::ctor::E::U",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_construct.rs:20:13: 20:23"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_construct::ctor::Named",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_construct.rs:18:13: 18:33"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_construct::ctor::Tuple",
+        "usages": [
+          {
+            "reachability": "Call",
+            "spans": [
+              "$DIR/reachability_construct.rs:17:13: 17:24"
+            ]
+          },
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_construct.rs:17:13: 17:24"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_construct::ctor::Unit",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_construct.rs:16:13: 16:23"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_construct::main",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_construct.rs:15:1: 23:2"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_construct::std",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "no-location"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_construct::{use#0}",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "no-location"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_construct"
+  },
+  {
+    "level": 2,
+    "name": "reachability_construct::ctor",
+    "items": [
+      {
+        "item": "reachability_construct::ctor::E",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_construct.rs:8:5: 12:6"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_construct::ctor::Named",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_construct.rs:4:5: 6:6"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_construct::ctor::Tuple",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_construct.rs:3:5: 3:31"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_construct::ctor::Unit",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_construct.rs:2:5: 2:21"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_construct"
+  }
+]

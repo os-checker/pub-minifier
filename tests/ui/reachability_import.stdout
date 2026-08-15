@@ -1,0 +1,359 @@
+[
+  {
+    "level": 1,
+    "name": "reachability_import",
+    "items": [
+      {
+        "item": "reachability_import::defs",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:1:1: 11:2"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::defs::A",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_import.rs:13:5: 13:12",
+              "$DIR/reachability_import.rs:34:13: 34:14"
+            ]
+          },
+          {
+            "reachability": "Import",
+            "spans": [
+              "$DIR/reachability_import.rs:13:1: 13:13"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::defs::A",
+        "usages": [
+          {
+            "reachability": "Import",
+            "spans": [
+              "$DIR/reachability_import.rs:13:1: 13:13"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::local",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:15:1: 21:2"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::local::make_b",
+        "usages": [
+          {
+            "reachability": "Call",
+            "spans": [
+              "$DIR/reachability_import.rs:35:13: 35:26"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::main",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:33:1: 37:2"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::nested",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:23:1: 31:2"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::nested::inner::make_c",
+        "usages": [
+          {
+            "reachability": "Call",
+            "spans": [
+              "$DIR/reachability_import.rs:36:13: 36:34"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::std",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "no-location"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::{use#0}",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "no-location"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::{use#1}",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:13:1: 13:13"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_import"
+  },
+  {
+    "level": 2,
+    "name": "reachability_import::defs",
+    "items": [
+      {
+        "item": "reachability_import::defs::A",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:2:5: 2:18"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::defs::mid",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:4:5: 10:6"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_import"
+  },
+  {
+    "level": 2,
+    "name": "reachability_import::local",
+    "items": [
+      {
+        "item": "reachability_import::defs::mid::B",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_import.rs:16:9: 16:28",
+              "$DIR/reachability_import.rs:19:9: 19:10"
+            ]
+          },
+          {
+            "reachability": "Import",
+            "spans": [
+              "$DIR/reachability_import.rs:16:5: 16:29"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::defs::mid::B",
+        "usages": [
+          {
+            "reachability": "Import",
+            "spans": [
+              "$DIR/reachability_import.rs:16:5: 16:29"
+            ]
+          },
+          {
+            "reachability": "TypeAnnotation",
+            "spans": [
+              "$DIR/reachability_import.rs:18:24: 18:25"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::local::make_b",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:18:5: 20:6"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::local::{use#0}",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:16:5: 16:29"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_import"
+  },
+  {
+    "level": 2,
+    "name": "reachability_import::nested",
+    "items": [
+      {
+        "item": "reachability_import::nested::inner",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:24:5: 30:6"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_import"
+  },
+  {
+    "level": 3,
+    "name": "reachability_import::defs::mid",
+    "items": [
+      {
+        "item": "reachability_import::defs::mid::B",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:5:9: 5:22"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::defs::mid::deep",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:7:9: 9:10"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_import::defs"
+  },
+  {
+    "level": 3,
+    "name": "reachability_import::nested::inner",
+    "items": [
+      {
+        "item": "reachability_import::defs::mid::deep::C",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_import.rs:25:13: 25:38",
+              "$DIR/reachability_import.rs:28:13: 28:14"
+            ]
+          },
+          {
+            "reachability": "Import",
+            "spans": [
+              "$DIR/reachability_import.rs:25:9: 25:39"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::defs::mid::deep::C",
+        "usages": [
+          {
+            "reachability": "Import",
+            "spans": [
+              "$DIR/reachability_import.rs:25:9: 25:39"
+            ]
+          },
+          {
+            "reachability": "TypeAnnotation",
+            "spans": [
+              "$DIR/reachability_import.rs:27:28: 27:29"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::nested::inner::make_c",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:27:9: 29:10"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::nested::inner::{use#0}",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:25:9: 25:39"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_import::nested"
+  },
+  {
+    "level": 4,
+    "name": "reachability_import::defs::mid::deep",
+    "items": [
+      {
+        "item": "reachability_import::defs::mid::deep::C",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_import.rs:8:13: 8:26"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_import::defs::mid"
+  }
+]

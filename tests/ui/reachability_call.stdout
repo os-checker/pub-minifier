@@ -1,0 +1,172 @@
+[
+  {
+    "level": 1,
+    "name": "reachability_call",
+    "items": [
+      {
+        "item": "reachability_call::api",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_call.rs:1:1: 19:2"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_call::api::Worker",
+        "usages": [
+          {
+            "reachability": "TypeAnnotation",
+            "spans": [
+              "$DIR/reachability_call.rs:25:13: 25:24"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_call::api::Worker::run",
+        "usages": [
+          {
+            "reachability": "Call",
+            "spans": [
+              "$DIR/reachability_call.rs:26:5: 26:12"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_call::api::free_fn",
+        "usages": [
+          {
+            "reachability": "Call",
+            "spans": [
+              "$DIR/reachability_call.rs:22:5: 22:17"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_call::api::nested::ping",
+        "usages": [
+          {
+            "reachability": "Call",
+            "spans": [
+              "$DIR/reachability_call.rs:23:5: 23:22"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_call::main",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_call.rs:21:1: 27:2"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_call::std",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "no-location"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_call::{use#0}",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "no-location"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_call"
+  },
+  {
+    "level": 2,
+    "name": "reachability_call::api",
+    "items": [
+      {
+        "item": "reachability_call::api::Worker",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_call.rs:4:5: 4:23"
+            ]
+          },
+          {
+            "reachability": "TypeAnnotation",
+            "spans": [
+              "$DIR/reachability_call.rs:6:10: 6:16"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_call::api::Worker",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_call.rs:6:5: 14:6"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_call::api::free_fn",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_call.rs:2:5: 2:24"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_call::api::nested",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_call.rs:16:5: 18:6"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_call"
+  },
+  {
+    "level": 3,
+    "name": "reachability_call::api::nested",
+    "items": [
+      {
+        "item": "reachability_call::api::nested::ping",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_call.rs:17:9: 17:25"
+            ]
+          }
+        ]
+      }
+    ],
+    "parent_mod": "reachability_call::api"
+  }
+]
