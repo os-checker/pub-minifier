@@ -4,7 +4,6 @@ use rustc_hir::{
     def_id::{CRATE_MOD_ID, LocalModId},
 };
 use rustc_middle::ty::TyCtxt;
-use std::iter;
 
 #[derive(Default, Debug)]
 pub struct Modules {

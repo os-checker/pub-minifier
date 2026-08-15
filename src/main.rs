@@ -32,7 +32,3 @@ fn free_items(items: &ModuleItems, tcx: TyCtxt) {
     }
     dbg!(&modules);
 }
-
-mod a {
-    mod b {}
-}
