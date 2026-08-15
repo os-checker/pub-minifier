@@ -29,5 +29,6 @@ pub fn def_path_str(def_id: DefId, tcx: TyCtxt) -> String {
 pub struct OutModule {
     pub level: u8,
     pub name: String,
-    pub parent: String,
+    pub items: Vec<String>,
+    pub parent_mod: String,
 }

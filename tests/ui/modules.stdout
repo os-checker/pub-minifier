@@ -2,26 +2,41 @@
   {
     "level": 1,
     "name": "modules",
-    "parent": "modules"
+    "items": [
+      "modules::a",
+      "modules::d",
+      "modules::main",
+      "modules::std",
+      "modules::{use#0}"
+    ],
+    "parent_mod": "modules"
   },
   {
     "level": 2,
     "name": "modules::a",
-    "parent": "modules"
+    "items": [
+      "modules::a::b"
+    ],
+    "parent_mod": "modules"
   },
   {
     "level": 2,
     "name": "modules::d",
-    "parent": "modules"
+    "items": [],
+    "parent_mod": "modules"
   },
   {
     "level": 3,
     "name": "modules::a::b",
-    "parent": "modules::a"
+    "items": [
+      "modules::a::b::c"
+    ],
+    "parent_mod": "modules::a"
   },
   {
     "level": 4,
     "name": "modules::a::b::c",
-    "parent": "modules::a::b"
+    "items": [],
+    "parent_mod": "modules::a::b"
   }
 ]
