@@ -1,7 +1,27 @@
-mod a
-mod b
-  add: current=LocalModId(DefId(0:3 ~ modules[d798]::a)) parent=LocalModId(DefId(0:0 ~ modules[d798]))
-mod c
-  add: current=LocalModId(DefId(0:3 ~ modules[d798]::a)) parent=LocalModId(DefId(0:0 ~ modules[d798]))
-  add: current=LocalModId(DefId(0:4 ~ modules[d798]::a::b)) parent=LocalModId(DefId(0:3 ~ modules[d798]::a))
-mod d
+[
+  {
+    "level": 1,
+    "name": "modules",
+    "parent": "modules"
+  },
+  {
+    "level": 2,
+    "name": "modules::a",
+    "parent": "modules"
+  },
+  {
+    "level": 2,
+    "name": "modules::d",
+    "parent": "modules"
+  },
+  {
+    "level": 3,
+    "name": "modules::a::b",
+    "parent": "modules::a"
+  },
+  {
+    "level": 4,
+    "name": "modules::a::b::c",
+    "parent": "modules::a::b"
+  }
+]

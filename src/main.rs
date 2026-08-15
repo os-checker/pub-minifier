@@ -1,5 +1,6 @@
 #![feature(rustc_private)]
 
+extern crate itertools;
 extern crate rustc_data_structures;
 extern crate rustc_driver;
 extern crate rustc_hir;
@@ -11,6 +12,7 @@ use rustc_middle::{hir::ModuleItems, ty::TyCtxt};
 use std::ops::ControlFlow;
 
 mod module_levels;
+mod out;
 
 fn main() {
     let args: Vec<_> = std::env::args().collect();
@@ -30,5 +32,6 @@ fn free_items(items: &ModuleItems, tcx: TyCtxt) {
     for item_id in items.free_items() {
         modules.add_item_id(tcx, item_id);
     }
-    dbg!(&modules);
+
+    out::out(&modules.out(tcx));
 }
