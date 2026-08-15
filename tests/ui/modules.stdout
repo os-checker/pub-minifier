@@ -3,11 +3,61 @@
     "level": 1,
     "name": "modules",
     "items": [
-      "modules::a",
-      "modules::d",
-      "modules::main",
-      "modules::std",
-      "modules::{use#0}"
+      {
+        "item": "modules::a",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/modules.rs:1:1: 5:2"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "modules::d",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/modules.rs:7:1: 7:9"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "modules::main",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/modules.rs:9:1: 9:13"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "modules::std",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "no-location"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "modules::{use#0}",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "no-location"
+            ]
+          }
+        ]
+      }
     ],
     "parent_mod": "modules"
   },
@@ -15,7 +65,17 @@
     "level": 2,
     "name": "modules::a",
     "items": [
-      "modules::a::b"
+      {
+        "item": "modules::a::b",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/modules.rs:2:5: 4:6"
+            ]
+          }
+        ]
+      }
     ],
     "parent_mod": "modules"
   },
@@ -29,7 +89,17 @@
     "level": 3,
     "name": "modules::a::b",
     "items": [
-      "modules::a::b::c"
+      {
+        "item": "modules::a::b::c",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/modules.rs:3:9: 3:17"
+            ]
+          }
+        ]
+      }
     ],
     "parent_mod": "modules::a"
   },
