@@ -6,7 +6,7 @@ use rustc_hir::{
     def_id::DefId,
     intravisit::{self, Visitor},
 };
-use rustc_middle::{hir::nested_filter::OnlyBodies, ty::TyCtxt};
+use rustc_middle::{hir::nested_filter::All, ty::TyCtxt};
 use rustc_span::Span;
 
 /// Collects all non-definition usage hits found in a single HIR item.
@@ -112,7 +112,7 @@ impl<'tcx> ReachabilityCollector<'tcx> {
 }
 
 impl<'tcx> Visitor<'tcx> for ReachabilityCollector<'tcx> {
-    type NestedFilter = OnlyBodies;
+    type NestedFilter = All;
 
     /// Provides `TyCtxt` for nested body traversal in intravisit.
     fn maybe_tcx(&mut self) -> Self::MaybeTyCtxt {
@@ -161,5 +161,21 @@ impl<'tcx> Visitor<'tcx> for ReachabilityCollector<'tcx> {
             self.record_usage(def_id, Reachability::Construct, path.span);
         }
         intravisit::walk_path(self, path);
+    }
+
+    fn visit_impl_item(&mut self, ii: &'tcx rustc_hir::ImplItem<'tcx>) -> Self::Result {
+        let def_id = ii.owner_id.to_def_id();
+        self.record_usage(def_id, Reachability::Definition, ii.span);
+        intravisit::walk_impl_item(self, ii)
+    }
+
+    fn visit_mod(&mut self, m: &'tcx rustc_hir::Mod<'tcx>, _s: Span, _n: HirId) -> Self::Result {
+        for &item_id in m.item_ids {
+            let item = self.maybe_tcx().hir_item(item_id);
+            // Don't walk into modules inside a module.
+            if !matches!(item.kind, ItemKind::Mod(..)) {
+                self.visit_item(item);
+            }
+        }
     }
 }

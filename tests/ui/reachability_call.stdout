@@ -137,9 +137,51 @@
         ]
       },
       {
+        "item": "reachability_call::api::Worker",
+        "kind": "unit struct",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_call.rs:8:13: 8:19"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_call::api::Worker::new",
+        "kind": "associated function",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_call.rs:7:9: 9:10"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_call::api::Worker::run",
+        "kind": "method",
+        "usages": [
+          {
+            "reachability": "Definition",
+            "spans": [
+              "$DIR/reachability_call.rs:11:9: 13:10"
+            ]
+          }
+        ]
+      },
+      {
         "item": "reachability_call::api::free_fn",
         "kind": "function",
         "usages": [
+          {
+            "reachability": "Call",
+            "spans": [
+              "$DIR/reachability_call.rs:12:13: 12:20"
+            ]
+          },
           {
             "reachability": "Definition",
             "spans": [
