@@ -8,7 +8,10 @@ use rustc_hir::def_id::DefId;
 use rustc_middle::ty::TyCtxt;
 use rustc_span::Span;
 use serde::{Deserialize, Serialize};
-use std::sync::{LazyLock, Mutex};
+use std::{
+    borrow::Cow,
+    sync::{LazyLock, Mutex},
+};
 
 /// Serializes a value as pretty JSON and writes it to stdout.
 pub fn out<T: Serialize>(val: &T) {
@@ -45,6 +48,7 @@ pub struct OutUsage {
 #[derive(Debug, Deserialize, Serialize, PartialEq, Eq, PartialOrd, Ord)]
 pub struct OutItemUsage {
     pub item: String,
+    pub kind: Cow<'static, str>,
     pub usages: Vec<OutUsage>,
 }
 

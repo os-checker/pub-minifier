@@ -5,6 +5,7 @@
     "items": [
       {
         "item": "reachability_definition::level1",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
@@ -16,6 +17,7 @@
       },
       {
         "item": "reachability_definition::level1::level2::make_holder",
+        "kind": "function",
         "usages": [
           {
             "reachability": "Call",
@@ -27,6 +29,7 @@
       },
       {
         "item": "reachability_definition::level1::use_fields",
+        "kind": "function",
         "usages": [
           {
             "reachability": "Call",
@@ -38,6 +41,7 @@
       },
       {
         "item": "reachability_definition::main",
+        "kind": "function",
         "usages": [
           {
             "reachability": "Definition",
@@ -49,6 +53,7 @@
       },
       {
         "item": "reachability_definition::std",
+        "kind": "extern crate",
         "usages": [
           {
             "reachability": "Definition",
@@ -60,6 +65,7 @@
       },
       {
         "item": "reachability_definition::{use#0}",
+        "kind": "import",
         "usages": [
           {
             "reachability": "Definition",
@@ -78,6 +84,7 @@
     "items": [
       {
         "item": "reachability_definition::level1::Bits",
+        "kind": "union",
         "usages": [
           {
             "reachability": "Construct",
@@ -95,6 +102,7 @@
       },
       {
         "item": "reachability_definition::level1::Point",
+        "kind": "struct",
         "usages": [
           {
             "reachability": "Construct",
@@ -121,6 +129,7 @@
       },
       {
         "item": "reachability_definition::level1::Shape",
+        "kind": "enum",
         "usages": [
           {
             "reachability": "Definition",
@@ -132,6 +141,7 @@
       },
       {
         "item": "reachability_definition::level1::Shape::Dot",
+        "kind": "variant",
         "usages": [
           {
             "reachability": "Construct",
@@ -143,6 +153,7 @@
       },
       {
         "item": "reachability_definition::level1::Shape::Pair",
+        "kind": "tuple variant",
         "usages": [
           {
             "reachability": "Construct",
@@ -154,6 +165,7 @@
       },
       {
         "item": "reachability_definition::level1::level2",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
@@ -165,6 +177,7 @@
       },
       {
         "item": "reachability_definition::level1::use_fields",
+        "kind": "function",
         "usages": [
           {
             "reachability": "Definition",
@@ -183,6 +196,7 @@
     "items": [
       {
         "item": "reachability_definition::level1::Point",
+        "kind": "struct",
         "usages": [
           {
             "reachability": "Construct",
@@ -200,6 +214,7 @@
       },
       {
         "item": "reachability_definition::level1::level2::Holder",
+        "kind": "struct",
         "usages": [
           {
             "reachability": "Construct",
@@ -223,6 +238,7 @@
       },
       {
         "item": "reachability_definition::level1::level2::make_holder",
+        "kind": "function",
         "usages": [
           {
             "reachability": "Definition",

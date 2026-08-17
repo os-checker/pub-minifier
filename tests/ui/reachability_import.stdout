@@ -5,6 +5,7 @@
     "items": [
       {
         "item": "reachability_import::defs",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
@@ -16,6 +17,19 @@
       },
       {
         "item": "reachability_import::defs::A",
+        "kind": "struct",
+        "usages": [
+          {
+            "reachability": "Import",
+            "spans": [
+              "$DIR/reachability_import.rs:13:1: 13:13"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::defs::A",
+        "kind": "unit struct",
         "usages": [
           {
             "reachability": "Construct",
@@ -33,18 +47,8 @@
         ]
       },
       {
-        "item": "reachability_import::defs::A",
-        "usages": [
-          {
-            "reachability": "Import",
-            "spans": [
-              "$DIR/reachability_import.rs:13:1: 13:13"
-            ]
-          }
-        ]
-      },
-      {
         "item": "reachability_import::local",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
@@ -56,6 +60,7 @@
       },
       {
         "item": "reachability_import::local::make_b",
+        "kind": "function",
         "usages": [
           {
             "reachability": "Call",
@@ -67,6 +72,7 @@
       },
       {
         "item": "reachability_import::main",
+        "kind": "function",
         "usages": [
           {
             "reachability": "Definition",
@@ -78,6 +84,7 @@
       },
       {
         "item": "reachability_import::nested",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
@@ -89,6 +96,7 @@
       },
       {
         "item": "reachability_import::nested::inner::make_c",
+        "kind": "function",
         "usages": [
           {
             "reachability": "Call",
@@ -100,6 +108,7 @@
       },
       {
         "item": "reachability_import::std",
+        "kind": "extern crate",
         "usages": [
           {
             "reachability": "Definition",
@@ -111,6 +120,7 @@
       },
       {
         "item": "reachability_import::{use#0}",
+        "kind": "import",
         "usages": [
           {
             "reachability": "Definition",
@@ -122,6 +132,7 @@
       },
       {
         "item": "reachability_import::{use#1}",
+        "kind": "import",
         "usages": [
           {
             "reachability": "Definition",
@@ -140,6 +151,7 @@
     "items": [
       {
         "item": "reachability_import::defs::A",
+        "kind": "struct",
         "usages": [
           {
             "reachability": "Definition",
@@ -151,6 +163,7 @@
       },
       {
         "item": "reachability_import::defs::mid",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
@@ -169,6 +182,25 @@
     "items": [
       {
         "item": "reachability_import::defs::mid::B",
+        "kind": "struct",
+        "usages": [
+          {
+            "reachability": "Import",
+            "spans": [
+              "$DIR/reachability_import.rs:16:5: 16:29"
+            ]
+          },
+          {
+            "reachability": "TypeAnnotation",
+            "spans": [
+              "$DIR/reachability_import.rs:18:24: 18:25"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::defs::mid::B",
+        "kind": "unit struct",
         "usages": [
           {
             "reachability": "Construct",
@@ -186,24 +218,8 @@
         ]
       },
       {
-        "item": "reachability_import::defs::mid::B",
-        "usages": [
-          {
-            "reachability": "Import",
-            "spans": [
-              "$DIR/reachability_import.rs:16:5: 16:29"
-            ]
-          },
-          {
-            "reachability": "TypeAnnotation",
-            "spans": [
-              "$DIR/reachability_import.rs:18:24: 18:25"
-            ]
-          }
-        ]
-      },
-      {
         "item": "reachability_import::local::make_b",
+        "kind": "function",
         "usages": [
           {
             "reachability": "Definition",
@@ -215,6 +231,7 @@
       },
       {
         "item": "reachability_import::local::{use#0}",
+        "kind": "import",
         "usages": [
           {
             "reachability": "Definition",
@@ -233,6 +250,7 @@
     "items": [
       {
         "item": "reachability_import::nested::inner",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
@@ -251,6 +269,7 @@
     "items": [
       {
         "item": "reachability_import::defs::mid::B",
+        "kind": "struct",
         "usages": [
           {
             "reachability": "Definition",
@@ -262,6 +281,7 @@
       },
       {
         "item": "reachability_import::defs::mid::deep",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
@@ -280,6 +300,25 @@
     "items": [
       {
         "item": "reachability_import::defs::mid::deep::C",
+        "kind": "struct",
+        "usages": [
+          {
+            "reachability": "Import",
+            "spans": [
+              "$DIR/reachability_import.rs:25:9: 25:39"
+            ]
+          },
+          {
+            "reachability": "TypeAnnotation",
+            "spans": [
+              "$DIR/reachability_import.rs:27:28: 27:29"
+            ]
+          }
+        ]
+      },
+      {
+        "item": "reachability_import::defs::mid::deep::C",
+        "kind": "unit struct",
         "usages": [
           {
             "reachability": "Construct",
@@ -297,24 +336,8 @@
         ]
       },
       {
-        "item": "reachability_import::defs::mid::deep::C",
-        "usages": [
-          {
-            "reachability": "Import",
-            "spans": [
-              "$DIR/reachability_import.rs:25:9: 25:39"
-            ]
-          },
-          {
-            "reachability": "TypeAnnotation",
-            "spans": [
-              "$DIR/reachability_import.rs:27:28: 27:29"
-            ]
-          }
-        ]
-      },
-      {
         "item": "reachability_import::nested::inner::make_c",
+        "kind": "function",
         "usages": [
           {
             "reachability": "Definition",
@@ -326,6 +349,7 @@
       },
       {
         "item": "reachability_import::nested::inner::{use#0}",
+        "kind": "import",
         "usages": [
           {
             "reachability": "Definition",
@@ -344,6 +368,7 @@
     "items": [
       {
         "item": "reachability_import::defs::mid::deep::C",
+        "kind": "struct",
         "usages": [
           {
             "reachability": "Definition",

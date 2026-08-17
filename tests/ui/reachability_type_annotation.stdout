@@ -5,6 +5,7 @@
     "items": [
       {
         "item": "reachability_type_annotation::main",
+        "kind": "function",
         "usages": [
           {
             "reachability": "Definition",
@@ -16,6 +17,7 @@
       },
       {
         "item": "reachability_type_annotation::std",
+        "kind": "extern crate",
         "usages": [
           {
             "reachability": "Definition",
@@ -27,6 +29,7 @@
       },
       {
         "item": "reachability_type_annotation::takes_s",
+        "kind": "function",
         "usages": [
           {
             "reachability": "Call",
@@ -44,6 +47,7 @@
       },
       {
         "item": "reachability_type_annotation::ty_defs",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
@@ -55,6 +59,7 @@
       },
       {
         "item": "reachability_type_annotation::ty_defs::E",
+        "kind": "enum",
         "usages": [
           {
             "reachability": "TypeAnnotation",
@@ -66,6 +71,7 @@
       },
       {
         "item": "reachability_type_annotation::ty_defs::E::A",
+        "kind": "unit variant",
         "usages": [
           {
             "reachability": "Construct",
@@ -77,18 +83,7 @@
       },
       {
         "item": "reachability_type_annotation::ty_defs::S",
-        "usages": [
-          {
-            "reachability": "Construct",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:15:26: 15:36",
-              "$DIR/reachability_type_annotation.rs:19:13: 19:23"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_type_annotation::ty_defs::S",
+        "kind": "struct",
         "usages": [
           {
             "reachability": "TypeAnnotation",
@@ -100,18 +95,21 @@
         ]
       },
       {
-        "item": "reachability_type_annotation::ty_defs::nested::N",
+        "item": "reachability_type_annotation::ty_defs::S",
+        "kind": "unit struct",
         "usages": [
           {
             "reachability": "Construct",
             "spans": [
-              "$DIR/reachability_type_annotation.rs:17:34: 17:52"
+              "$DIR/reachability_type_annotation.rs:15:26: 15:36",
+              "$DIR/reachability_type_annotation.rs:19:13: 19:23"
             ]
           }
         ]
       },
       {
         "item": "reachability_type_annotation::ty_defs::nested::N",
+        "kind": "struct",
         "usages": [
           {
             "reachability": "TypeAnnotation",
@@ -122,7 +120,20 @@
         ]
       },
       {
+        "item": "reachability_type_annotation::ty_defs::nested::N",
+        "kind": "unit struct",
+        "usages": [
+          {
+            "reachability": "Construct",
+            "spans": [
+              "$DIR/reachability_type_annotation.rs:17:34: 17:52"
+            ]
+          }
+        ]
+      },
+      {
         "item": "reachability_type_annotation::{use#0}",
+        "kind": "import",
         "usages": [
           {
             "reachability": "Definition",
@@ -141,6 +152,7 @@
     "items": [
       {
         "item": "reachability_type_annotation::ty_defs::E",
+        "kind": "enum",
         "usages": [
           {
             "reachability": "Definition",
@@ -152,6 +164,7 @@
       },
       {
         "item": "reachability_type_annotation::ty_defs::S",
+        "kind": "struct",
         "usages": [
           {
             "reachability": "Definition",
@@ -163,6 +176,7 @@
       },
       {
         "item": "reachability_type_annotation::ty_defs::nested",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
@@ -181,6 +195,7 @@
     "items": [
       {
         "item": "reachability_type_annotation::ty_defs::nested::N",
+        "kind": "struct",
         "usages": [
           {
             "reachability": "Definition",
