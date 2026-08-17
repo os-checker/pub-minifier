@@ -5,6 +5,7 @@
     "items": [
       {
         "item": "reachability_construct::ctor",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
@@ -16,6 +17,7 @@
       },
       {
         "item": "reachability_construct::ctor::E::N",
+        "kind": "variant",
         "usages": [
           {
             "reachability": "Construct",
@@ -27,6 +29,7 @@
       },
       {
         "item": "reachability_construct::ctor::E::T",
+        "kind": "tuple variant",
         "usages": [
           {
             "reachability": "Call",
@@ -44,6 +47,7 @@
       },
       {
         "item": "reachability_construct::ctor::E::U",
+        "kind": "unit variant",
         "usages": [
           {
             "reachability": "Construct",
@@ -55,6 +59,7 @@
       },
       {
         "item": "reachability_construct::ctor::Named",
+        "kind": "struct",
         "usages": [
           {
             "reachability": "Construct",
@@ -66,6 +71,7 @@
       },
       {
         "item": "reachability_construct::ctor::Tuple",
+        "kind": "tuple struct",
         "usages": [
           {
             "reachability": "Call",
@@ -83,6 +89,7 @@
       },
       {
         "item": "reachability_construct::ctor::Unit",
+        "kind": "unit struct",
         "usages": [
           {
             "reachability": "Construct",
@@ -94,6 +101,7 @@
       },
       {
         "item": "reachability_construct::main",
+        "kind": "function",
         "usages": [
           {
             "reachability": "Definition",
@@ -105,6 +113,7 @@
       },
       {
         "item": "reachability_construct::std",
+        "kind": "extern crate",
         "usages": [
           {
             "reachability": "Definition",
@@ -116,6 +125,7 @@
       },
       {
         "item": "reachability_construct::{use#0}",
+        "kind": "import",
         "usages": [
           {
             "reachability": "Definition",
@@ -134,6 +144,7 @@
     "items": [
       {
         "item": "reachability_construct::ctor::E",
+        "kind": "enum",
         "usages": [
           {
             "reachability": "Definition",
@@ -145,6 +156,7 @@
       },
       {
         "item": "reachability_construct::ctor::Named",
+        "kind": "struct",
         "usages": [
           {
             "reachability": "Definition",
@@ -156,6 +168,7 @@
       },
       {
         "item": "reachability_construct::ctor::Tuple",
+        "kind": "struct",
         "usages": [
           {
             "reachability": "Definition",
@@ -167,6 +180,7 @@
       },
       {
         "item": "reachability_construct::ctor::Unit",
+        "kind": "struct",
         "usages": [
           {
             "reachability": "Definition",

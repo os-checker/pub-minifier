@@ -85,8 +85,9 @@ impl Modules {
                 items: val
                     .items
                     .iter()
-                    .map(|(item_def_id, usage)| OutItemUsage {
-                        item: def_path_str(*item_def_id, tcx),
+                    .map(|(&def_id, usage)| OutItemUsage {
+                        item: def_path_str(def_id, tcx),
+                        kind: tcx.def_kind_descr(tcx.def_kind(def_id), def_id).into(),
                         usages: usage
                             .entries()
                             .map(|(reachability, spans)| OutUsage {

@@ -5,6 +5,7 @@
     "items": [
       {
         "item": "modules::a",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
@@ -16,6 +17,7 @@
       },
       {
         "item": "modules::d",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
@@ -27,6 +29,7 @@
       },
       {
         "item": "modules::main",
+        "kind": "function",
         "usages": [
           {
             "reachability": "Definition",
@@ -38,6 +41,7 @@
       },
       {
         "item": "modules::std",
+        "kind": "extern crate",
         "usages": [
           {
             "reachability": "Definition",
@@ -49,6 +53,7 @@
       },
       {
         "item": "modules::{use#0}",
+        "kind": "import",
         "usages": [
           {
             "reachability": "Definition",
@@ -67,6 +72,7 @@
     "items": [
       {
         "item": "modules::a::b",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
@@ -91,6 +97,7 @@
     "items": [
       {
         "item": "modules::a::b::c",
+        "kind": "module",
         "usages": [
           {
             "reachability": "Definition",
