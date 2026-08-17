@@ -99,13 +99,37 @@ impl<'tcx> ReachabilityCollector<'tcx> {
     }
 
     /// Records a definition resolved from a qualified path form.
-    fn record_qpath(&mut self, qpath: &QPath<'_>, reachability: Reachability, span: Span) {
+    ///
+    /// Resolution rules:
+    /// - Prefer HIR/name-resolution (`Res`) when available.
+    /// - Never force `res.def_id()`: some valid `Res` variants (e.g. `PrimTy`,
+    ///   `SelfTyAlias`) do not carry a `DefId`.
+    /// - Use typeck fallback only for call-expression contexts, to recover
+    ///   type-relative callees like `Type::assoc_fn()` when HIR cannot provide a `DefId`.
+    fn record_qpath(
+        &mut self,
+        qpath: &QPath<'_>,
+        reachability: Reachability,
+        span: Span,
+        typeck_fallback_hir_id: Option<HirId>,
+    ) {
         match qpath {
             QPath::Resolved(_, path) => self.record_path_res(path, reachability, span),
             QPath::TypeRelative(_, segment) => {
-                if let Res::Def(_, def_id) = segment.res {
-                    self.record_usage(def_id, reachability, span);
-                }
+                let def_id = if let Res::Def(_, def_id) = segment.res {
+                    def_id
+                } else if let Some(hir_id) = typeck_fallback_hir_id
+                    && let Some(def_id) = self
+                        .tcx
+                        .typeck(hir_id.owner.def_id)
+                        .type_dependent_def_id(hir_id)
+                {
+                    def_id
+                } else {
+                    eprintln!("failed to know the DefId of qpath={qpath:#?}");
+                    return;
+                };
+                self.record_usage(def_id, reachability, span);
             }
         }
     }
@@ -122,7 +146,9 @@ impl<'tcx> Visitor<'tcx> for ReachabilityCollector<'tcx> {
     /// Marks type-path occurrences as `TypeAnnotation` reachability.
     fn visit_ty(&mut self, ty: &'tcx Ty<'tcx, AmbigArg>) {
         if let TyKind::Path(qpath) = ty.kind {
-            self.record_qpath(&qpath, Reachability::TypeAnnotation, ty.span);
+            // Type positions can be visited under owners without bodies
+            // (e.g. struct fields), so keep this branch HIR-only.
+            self.record_qpath(&qpath, Reachability::TypeAnnotation, ty.span, None);
         }
         intravisit::walk_ty(self, ty);
     }
@@ -132,17 +158,8 @@ impl<'tcx> Visitor<'tcx> for ReachabilityCollector<'tcx> {
         match expr.kind {
             ExprKind::Call(callee, ..) => {
                 if let ExprKind::Path(qpath) = callee.kind {
-                    self.record_qpath(&qpath, Reachability::Call, callee.span);
-                    // For type-relative associated function calls (e.g. `Type::new()`),
-                    // the callee DefId may only be available as a type-dependent def.
-                    if matches!(qpath, QPath::TypeRelative(..))
-                        && let Some(def_id) = self
-                            .tcx
-                            .typeck(callee.hir_id.owner.def_id)
-                            .type_dependent_def_id(callee.hir_id)
-                    {
-                        self.record_usage(def_id, Reachability::Call, qpath.span());
-                    }
+                    // Call expressions are inside bodies, so typeck fallback is valid.
+                    self.record_qpath(&qpath, Reachability::Call, callee.span, Some(callee.hir_id));
                 }
             }
             ExprKind::MethodCall(_, _, _, _) => {
@@ -155,7 +172,7 @@ impl<'tcx> Visitor<'tcx> for ReachabilityCollector<'tcx> {
                 }
             }
             ExprKind::Struct(qpath, _, _) => {
-                self.record_qpath(qpath, Reachability::Construct, expr.span);
+                self.record_qpath(qpath, Reachability::Construct, expr.span, None);
             }
             _ => {}
         }
