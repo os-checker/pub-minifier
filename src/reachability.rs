@@ -133,6 +133,16 @@ impl<'tcx> Visitor<'tcx> for ReachabilityCollector<'tcx> {
             ExprKind::Call(callee, ..) => {
                 if let ExprKind::Path(qpath) = callee.kind {
                     self.record_qpath(&qpath, Reachability::Call, callee.span);
+                    // For type-relative associated function calls (e.g. `Type::new()`),
+                    // the callee DefId may only be available as a type-dependent def.
+                    if matches!(qpath, QPath::TypeRelative(..))
+                        && let Some(def_id) = self
+                            .tcx
+                            .typeck(callee.hir_id.owner.def_id)
+                            .type_dependent_def_id(callee.hir_id)
+                    {
+                        self.record_usage(def_id, Reachability::Call, qpath.span());
+                    }
                 }
             }
             ExprKind::MethodCall(_, _, _, _) => {
