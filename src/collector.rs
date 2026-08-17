@@ -11,42 +11,8 @@ use rustc_span::Span;
 
 use crate::{
     out::{OutItemUsage, OutModule, OutUsage, def_path_str, span_to_string},
-    reachability,
+    reachability::{self, Reachability, UsageHit},
 };
-
-/// How the item is reached in the module.
-#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub enum Reachability {
-    /// The item is defined in the module.
-    Definition,
-    /// The function is called in the module.
-    Call,
-    /// The item is used in type annotation.
-    TypeAnnotation,
-    /// The item is used as a construct.
-    Construct,
-    /// The item is imported to the module via `use`.
-    Import,
-    /// The item is exported from the module via `pub use`.
-    Export,
-}
-
-#[derive(Debug, Default)]
-pub struct ItemUsage {
-    usage: FxHashMap<Reachability, Vec<Span>>,
-}
-
-impl ItemUsage {
-    /// Appends one usage occurrence under a specific reachability category.
-    pub fn add(&mut self, reachability: Reachability, span: Span) {
-        self.usage.entry(reachability).or_default().push(span);
-    }
-
-    /// Returns all reachability buckets and their recorded spans.
-    pub fn entries(&self) -> impl Iterator<Item = (&Reachability, &Vec<Span>)> {
-        self.usage.iter()
-    }
-}
 
 #[derive(Default, Debug)]
 pub struct Modules {
@@ -74,19 +40,15 @@ impl Modules {
         for item_id in module.item_ids.iter().copied() {
             let item = tcx.hir_item(item_id);
             let item_def_id = item.owner_id.to_def_id();
-            self.record_usage(current, item_def_id, Reachability::Definition, item.span);
+            self.record_usage(current, UsageHit::new_definition(item_def_id, item.span));
 
             for hit in reachability::collect_item_usages(tcx, item) {
-                self.record_usage(current, hit.item, hit.reachability, hit.span);
+                self.record_usage(current, hit);
             }
 
             if let ItemKind::Mod(_, _) = item.kind {
-                self.collect_module(
-                    tcx,
-                    LocalModId::new_unchecked(item.owner_id.def_id),
-                    level.saturating_add(1),
-                    current,
-                );
+                let child = LocalModId::new_unchecked(item.owner_id.def_id);
+                self.collect_module(tcx, child, level.saturating_add(1), current);
             }
         }
     }
@@ -101,15 +63,15 @@ impl Modules {
     }
 
     /// Records one usage hit for an item in the current module.
-    fn record_usage(
-        &mut self,
-        current_mod: LocalModId,
-        item: DefId,
-        reachability: Reachability,
-        span: Span,
-    ) {
+    fn record_usage(&mut self, current_mod: LocalModId, hit: UsageHit) {
         if let Some(module) = self.map.get_mut(&current_mod) {
-            module.items.entry(item).or_default().add(reachability, span);
+            module
+                .items
+                .entry(hit.item)
+                .or_default()
+                .add(hit.reachability, hit.span);
+        } else {
+            eprintln!("{current_mod:?} is not recorded in the module map");
         }
     }
 
@@ -157,4 +119,21 @@ pub struct Module {
     /// Items used in the module.
     /// The same item can appear in multiple syntax locations as different usage.
     items: FxHashMap<DefId, ItemUsage>,
+}
+
+#[derive(Debug, Default)]
+pub struct ItemUsage {
+    usage: FxHashMap<Reachability, Vec<Span>>,
+}
+
+impl ItemUsage {
+    /// Appends one usage occurrence under a specific reachability category.
+    pub fn add(&mut self, reachability: Reachability, span: Span) {
+        self.usage.entry(reachability).or_default().push(span);
+    }
+
+    /// Returns all reachability buckets and their recorded spans.
+    pub fn entries(&self) -> impl Iterator<Item = (&Reachability, &Vec<Span>)> {
+        self.usage.iter()
+    }
 }

@@ -3,19 +3,11 @@
 use rustc_hir::{
     AmbigArg, Expr, ExprKind, HirId, Item, ItemKind, Path, QPath, Ty, TyKind, UsePath,
     def::{DefKind, Res},
+    def_id::DefId,
     intravisit::{self, Visitor},
 };
 use rustc_middle::{hir::nested_filter::OnlyBodies, ty::TyCtxt};
 use rustc_span::Span;
-
-use crate::collector::Reachability;
-
-#[derive(Clone, Copy)]
-pub struct UsageHit {
-    pub item: rustc_hir::def_id::DefId,
-    pub reachability: Reachability,
-    pub span: Span,
-}
 
 /// Collects all non-definition usage hits found in a single HIR item.
 pub fn collect_item_usages<'tcx>(tcx: TyCtxt<'tcx>, item: &'tcx Item<'tcx>) -> Vec<UsageHit> {
@@ -28,6 +20,40 @@ pub fn collect_item_usages<'tcx>(tcx: TyCtxt<'tcx>, item: &'tcx Item<'tcx>) -> V
     collector.hits
 }
 
+/// How the item is reached in the module.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub enum Reachability {
+    /// The item is defined in the module.
+    Definition,
+    /// The function is called in the module.
+    Call,
+    /// The item is used in type annotation.
+    TypeAnnotation,
+    /// The item is used as a construct.
+    Construct,
+    /// The item is imported to the module via `use`.
+    Import,
+    /// The item is exported from the module via `pub use`.
+    Export,
+}
+
+#[derive(Clone, Copy)]
+pub struct UsageHit {
+    pub item: DefId,
+    pub reachability: Reachability,
+    pub span: Span,
+}
+
+impl UsageHit {
+    pub fn new_definition(item: DefId, span: Span) -> Self {
+        UsageHit {
+            item,
+            reachability: Reachability::Definition,
+            span,
+        }
+    }
+}
+
 struct ReachabilityCollector<'tcx> {
     tcx: TyCtxt<'tcx>,
     hits: Vec<UsageHit>,
@@ -35,12 +61,7 @@ struct ReachabilityCollector<'tcx> {
 
 impl<'tcx> ReachabilityCollector<'tcx> {
     /// Pushes one usage hit into the in-memory hit buffer.
-    fn record_usage(
-        &mut self,
-        item: rustc_hir::def_id::DefId,
-        reachability: Reachability,
-        span: Span,
-    ) {
+    fn record_usage(&mut self, item: DefId, reachability: Reachability, span: Span) {
         self.hits.push(UsageHit {
             item,
             reachability,
@@ -124,7 +145,7 @@ impl<'tcx> Visitor<'tcx> for ReachabilityCollector<'tcx> {
                 }
             }
             ExprKind::Struct(qpath, _, _) => {
-                self.record_qpath(&qpath, Reachability::Construct, expr.span);
+                self.record_qpath(qpath, Reachability::Construct, expr.span);
             }
             _ => {}
         }
@@ -134,10 +155,10 @@ impl<'tcx> Visitor<'tcx> for ReachabilityCollector<'tcx> {
 
     /// Captures constructor paths that appear outside `ExprKind::Struct`.
     fn visit_path(&mut self, path: &Path<'tcx>, _id: HirId) {
-        if matches!(path.res, Res::Def(DefKind::Ctor(..), _)) {
-            if let Some(def_id) = path.res.opt_def_id() {
-                self.record_usage(def_id, Reachability::Construct, path.span);
-            }
+        if matches!(path.res, Res::Def(DefKind::Ctor(..), _))
+            && let Some(def_id) = path.res.opt_def_id()
+        {
+            self.record_usage(def_id, Reachability::Construct, path.span);
         }
         intravisit::walk_path(self, path);
     }
