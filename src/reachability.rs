@@ -68,13 +68,6 @@ impl<'tcx> ReachabilityCollector<'tcx> {
         });
     }
 
-    /// Records all resolved definitions carried by a `use` path.
-    fn record_use_path_res(&mut self, path: &UsePath<'_>, reachability: Reachability, span: Span) {
-        for res in path.res.present_items() {
-            self.record_path_res(&res, reachability, span);
-        }
-    }
-
     /// Records a definition resolved from a normal path.
     fn record_path_res(&mut self, res: &Res, reachability: Reachability, span: Span) {
         if let Some(def_id) = res.opt_def_id() {
@@ -182,12 +175,13 @@ impl<'tcx> Visitor<'tcx> for ReachabilityCollector<'tcx> {
 
     /// Handles `use` items and classifies them as import or export.
     fn visit_use(&mut self, path: &'tcx UsePath<'tcx>, hir_id: HirId) -> Self::Result {
+        let Some(res) = path.res.type_ns else { return };
         let reachability = if self.tcx.local_visibility(hir_id.owner.def_id).is_public() {
             Reachability::Export
         } else {
             Reachability::Import
         };
-        self.record_use_path_res(path, reachability, path.span);
+        self.record_path_res(&res, reachability, path.span);
     }
 
     fn visit_mod(&mut self, m: &'tcx rustc_hir::Mod<'tcx>, _s: Span, _n: HirId) -> Self::Result {

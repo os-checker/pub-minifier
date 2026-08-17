@@ -138,32 +138,8 @@
         ]
       },
       {
-        "item": "reachability_export::defs::Item",
-        "kind": "unit struct",
-        "usages": [
-          {
-            "reachability": "Export",
-            "spans": [
-              "$DIR/reachability_export.rs:10:13: 10:30"
-            ]
-          }
-        ]
-      },
-      {
         "item": "reachability_export::defs::inner::Deep",
         "kind": "struct",
-        "usages": [
-          {
-            "reachability": "Export",
-            "spans": [
-              "$DIR/reachability_export.rs:11:13: 11:37"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_export::defs::inner::Deep",
-        "kind": "unit struct",
         "usages": [
           {
             "reachability": "Export",

@@ -36,12 +36,6 @@
             "spans": [
               "$DIR/reachability_import.rs:34:13: 34:14"
             ]
-          },
-          {
-            "reachability": "Import",
-            "spans": [
-              "$DIR/reachability_import.rs:13:5: 13:12"
-            ]
           }
         ]
       },
@@ -206,12 +200,6 @@
             "spans": [
               "$DIR/reachability_import.rs:19:9: 19:10"
             ]
-          },
-          {
-            "reachability": "Import",
-            "spans": [
-              "$DIR/reachability_import.rs:16:9: 16:28"
-            ]
           }
         ]
       },
@@ -322,12 +310,6 @@
             "reachability": "Construct",
             "spans": [
               "$DIR/reachability_import.rs:28:13: 28:14"
-            ]
-          },
-          {
-            "reachability": "Import",
-            "spans": [
-              "$DIR/reachability_import.rs:25:13: 25:38"
             ]
           }
         ]
