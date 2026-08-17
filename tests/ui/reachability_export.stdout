@@ -132,7 +132,7 @@
           {
             "reachability": "Export",
             "spans": [
-              "$DIR/reachability_export.rs:10:5: 10:31"
+              "$DIR/reachability_export.rs:10:13: 10:30"
             ]
           }
         ]
@@ -142,15 +142,9 @@
         "kind": "unit struct",
         "usages": [
           {
-            "reachability": "Construct",
-            "spans": [
-              "$DIR/reachability_export.rs:10:13: 10:30"
-            ]
-          },
-          {
             "reachability": "Export",
             "spans": [
-              "$DIR/reachability_export.rs:10:5: 10:31"
+              "$DIR/reachability_export.rs:10:13: 10:30"
             ]
           }
         ]
@@ -162,7 +156,7 @@
           {
             "reachability": "Export",
             "spans": [
-              "$DIR/reachability_export.rs:11:5: 11:38"
+              "$DIR/reachability_export.rs:11:13: 11:37"
             ]
           }
         ]
@@ -172,15 +166,9 @@
         "kind": "unit struct",
         "usages": [
           {
-            "reachability": "Construct",
-            "spans": [
-              "$DIR/reachability_export.rs:11:13: 11:37"
-            ]
-          },
-          {
             "reachability": "Export",
             "spans": [
-              "$DIR/reachability_export.rs:11:5: 11:38"
+              "$DIR/reachability_export.rs:11:13: 11:37"
             ]
           }
         ]
