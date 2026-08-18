@@ -15,7 +15,6 @@ pub fn collect_item_usages<'tcx>(tcx: TyCtxt<'tcx>, item: &'tcx Item<'tcx>) -> V
         tcx,
         hits: Vec::new(),
     };
-    collector.collect_use_reachability(item);
     collector.visit_item(item);
     collector.hits
 }
@@ -69,31 +68,9 @@ impl<'tcx> ReachabilityCollector<'tcx> {
         });
     }
 
-    /// Handles `use` items and classifies them as import or export.
-    fn collect_use_reachability(&mut self, item: &Item<'_>) {
-        let ItemKind::Use(path, _) = item.kind else {
-            return;
-        };
-        let reachability = if self.tcx.local_visibility(item.owner_id.def_id).is_public() {
-            Reachability::Export
-        } else {
-            Reachability::Import
-        };
-        self.record_use_path_res(path, reachability, item.span);
-    }
-
-    /// Records all resolved definitions carried by a `use` path.
-    fn record_use_path_res(&mut self, path: &UsePath<'_>, reachability: Reachability, span: Span) {
-        for res in path.res.present_items() {
-            if let Some(def_id) = res.opt_def_id() {
-                self.record_usage(def_id, reachability, span);
-            }
-        }
-    }
-
     /// Records a definition resolved from a normal path.
-    fn record_path_res(&mut self, path: &Path<'_>, reachability: Reachability, span: Span) {
-        if let Some(def_id) = path.res.opt_def_id() {
+    fn record_path_res(&mut self, res: &Res, reachability: Reachability, span: Span) {
+        if let Some(def_id) = res.opt_def_id() {
             self.record_usage(def_id, reachability, span);
         }
     }
@@ -114,7 +91,7 @@ impl<'tcx> ReachabilityCollector<'tcx> {
         typeck_fallback_hir_id: Option<HirId>,
     ) {
         match qpath {
-            QPath::Resolved(_, path) => self.record_path_res(path, reachability, span),
+            QPath::Resolved(_, path) => self.record_path_res(&path.res, reachability, span),
             QPath::TypeRelative(_, segment) => {
                 let def_id = if let Res::Def(_, def_id) = segment.res {
                     def_id
@@ -194,6 +171,17 @@ impl<'tcx> Visitor<'tcx> for ReachabilityCollector<'tcx> {
         let def_id = ii.owner_id.to_def_id();
         self.record_usage(def_id, Reachability::Definition, ii.span);
         intravisit::walk_impl_item(self, ii)
+    }
+
+    /// Handles `use` items and classifies them as import or export.
+    fn visit_use(&mut self, path: &'tcx UsePath<'tcx>, hir_id: HirId) -> Self::Result {
+        let Some(res) = path.res.type_ns else { return };
+        let reachability = if self.tcx.local_visibility(hir_id.owner.def_id).is_public() {
+            Reachability::Export
+        } else {
+            Reachability::Import
+        };
+        self.record_path_res(&res, reachability, path.span);
     }
 
     fn visit_mod(&mut self, m: &'tcx rustc_hir::Mod<'tcx>, _s: Span, _n: HirId) -> Self::Result {
