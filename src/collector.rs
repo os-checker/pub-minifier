@@ -209,15 +209,12 @@ impl Modules {
             target = self.map.get(&target).unwrap().parent;
         }
         target = m2;
-        let root = CRATE_MOD_ID;
         loop {
+            // Each local module must derive from the root.
             if buf.contains(&target) {
                 return target;
             }
             target = self.map.get(&target).unwrap().parent;
-            if target == root {
-                return root;
-            }
         }
     }
 }
