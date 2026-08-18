@@ -199,31 +199,37 @@
     {
       "item": "reachability_construct::ctor",
       "kind": "module",
+      "visibility": "pub(crate)",
       "shallowest_mod": "reachability_construct"
     },
     {
       "item": "reachability_construct::ctor::E",
       "kind": "enum",
+      "visibility": "pub",
       "shallowest_mod": "reachability_construct::ctor"
     },
     {
       "item": "reachability_construct::ctor::Named",
       "kind": "struct",
+      "visibility": "pub",
       "shallowest_mod": "reachability_construct"
     },
     {
       "item": "reachability_construct::ctor::Tuple",
       "kind": "struct",
+      "visibility": "pub",
       "shallowest_mod": "reachability_construct::ctor"
     },
     {
       "item": "reachability_construct::ctor::Unit",
       "kind": "struct",
+      "visibility": "pub",
       "shallowest_mod": "reachability_construct::ctor"
     },
     {
       "item": "reachability_construct::main",
       "kind": "function",
+      "visibility": "pub(crate)",
       "shallowest_mod": "reachability_construct"
     }
   ]

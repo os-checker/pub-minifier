@@ -5,7 +5,7 @@ use rustc_data_structures::fx::{FxHashMap, FxHashSet};
 use rustc_hir::{
     ItemKind, Mod,
     def::DefKind,
-    def_id::{CRATE_MOD_ID, DefId, LocalModId},
+    def_id::{CRATE_DEF_ID, CRATE_MOD_ID, DefId, LocalModId},
 };
 use rustc_middle::ty::TyCtxt;
 use rustc_span::Span;
@@ -20,17 +20,19 @@ pub struct Modules {
     map: FxHashMap<LocalModId, Module>,
 }
 
+const ROOT: LocalModId = CRATE_MOD_ID;
+
 impl Modules {
     /// Builds the full module tree from crate root and collects per-module item usage.
     pub fn collect(tcx: TyCtxt) -> Self {
         let mut modules = Self::default();
-        modules.collect_module(tcx, CRATE_MOD_ID, 1, CRATE_MOD_ID);
+        modules.collect_module(tcx, ROOT, 1, ROOT);
         modules
     }
 
     /// Recursively traverses one module, collecting definition and usage hits for its items.
     fn collect_module(&mut self, tcx: TyCtxt, current: LocalModId, level: u8, parent: LocalModId) {
-        let module = if current == CRATE_MOD_ID {
+        let module = if current == ROOT {
             tcx.hir_root_module()
         } else {
             tcx.hir_get_module(current).0
@@ -177,10 +179,15 @@ impl Modules {
             map.insert(def_id, shallowest_id);
         }
         map.into_iter()
-            .map(|(item_id, local_mod_id)| OutLocalAncestor {
-                item: def_path_str(item_id, tcx),
-                kind: tcx.def_kind_descr(tcx.def_kind(item_id), item_id).into(),
-                shallowest_mod: def_path_str(local_mod_id.to_def_id(), tcx),
+            .map(|(item_id, local_mod_id)| {
+                let local_def_id = item_id.as_local().unwrap();
+                let vis = tcx.local_visibility(local_def_id);
+                OutLocalAncestor {
+                    item: def_path_str(item_id, tcx),
+                    kind: tcx.def_kind_descr(tcx.def_kind(item_id), item_id).into(),
+                    visibility: vis.to_string(CRATE_DEF_ID, tcx),
+                    shallowest_mod: def_path_str(local_mod_id.to_def_id(), tcx),
+                }
             })
             .sorted_unstable()
             .collect()

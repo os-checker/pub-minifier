@@ -242,41 +242,49 @@
     {
       "item": "reachability_call::api",
       "kind": "module",
+      "visibility": "pub(crate)",
       "shallowest_mod": "reachability_call"
     },
     {
       "item": "reachability_call::api::Worker",
       "kind": "struct",
+      "visibility": "pub",
       "shallowest_mod": "reachability_call"
     },
     {
       "item": "reachability_call::api::Worker::new",
       "kind": "associated function",
+      "visibility": "pub",
       "shallowest_mod": "reachability_call"
     },
     {
       "item": "reachability_call::api::Worker::run",
       "kind": "method",
+      "visibility": "pub",
       "shallowest_mod": "reachability_call"
     },
     {
       "item": "reachability_call::api::free_fn",
       "kind": "function",
+      "visibility": "pub",
       "shallowest_mod": "reachability_call"
     },
     {
       "item": "reachability_call::api::nested",
       "kind": "module",
+      "visibility": "pub",
       "shallowest_mod": "reachability_call::api"
     },
     {
       "item": "reachability_call::api::nested::ping",
       "kind": "function",
+      "visibility": "pub",
       "shallowest_mod": "reachability_call"
     },
     {
       "item": "reachability_call::main",
       "kind": "function",
+      "visibility": "pub(crate)",
       "shallowest_mod": "reachability_call"
     }
   ]

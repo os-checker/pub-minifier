@@ -201,31 +201,37 @@
     {
       "item": "reachability_export::defs",
       "kind": "module",
+      "visibility": "pub(crate)",
       "shallowest_mod": "reachability_export"
     },
     {
       "item": "reachability_export::defs::Item",
       "kind": "struct",
+      "visibility": "pub",
       "shallowest_mod": "reachability_export"
     },
     {
       "item": "reachability_export::defs::inner",
       "kind": "module",
+      "visibility": "pub",
       "shallowest_mod": "reachability_export::defs"
     },
     {
       "item": "reachability_export::defs::inner::Deep",
       "kind": "struct",
+      "visibility": "pub",
       "shallowest_mod": "reachability_export"
     },
     {
       "item": "reachability_export::exports",
       "kind": "module",
+      "visibility": "pub",
       "shallowest_mod": "reachability_export"
     },
     {
       "item": "reachability_export::main",
       "kind": "function",
+      "visibility": "pub(crate)",
       "shallowest_mod": "reachability_export"
     }
   ]

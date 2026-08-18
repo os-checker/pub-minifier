@@ -257,46 +257,55 @@
     {
       "item": "reachability_definition::level1",
       "kind": "module",
+      "visibility": "pub(crate)",
       "shallowest_mod": "reachability_definition"
     },
     {
       "item": "reachability_definition::level1::Bits",
       "kind": "union",
+      "visibility": "pub",
       "shallowest_mod": "reachability_definition::level1"
     },
     {
       "item": "reachability_definition::level1::Point",
       "kind": "struct",
+      "visibility": "pub",
       "shallowest_mod": "reachability_definition::level1"
     },
     {
       "item": "reachability_definition::level1::Shape",
       "kind": "enum",
+      "visibility": "pub",
       "shallowest_mod": "reachability_definition::level1"
     },
     {
       "item": "reachability_definition::level1::level2",
       "kind": "module",
+      "visibility": "pub",
       "shallowest_mod": "reachability_definition::level1"
     },
     {
       "item": "reachability_definition::level1::level2::Holder",
       "kind": "struct",
+      "visibility": "pub",
       "shallowest_mod": "reachability_definition::level1::level2"
     },
     {
       "item": "reachability_definition::level1::level2::make_holder",
       "kind": "function",
+      "visibility": "pub",
       "shallowest_mod": "reachability_definition"
     },
     {
       "item": "reachability_definition::level1::use_fields",
       "kind": "function",
+      "visibility": "pub",
       "shallowest_mod": "reachability_definition"
     },
     {
       "item": "reachability_definition::main",
       "kind": "function",
+      "visibility": "pub(crate)",
       "shallowest_mod": "reachability_definition"
     }
   ]
