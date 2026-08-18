@@ -39,16 +39,16 @@ impl Modules {
 
         for item_id in module.item_ids.iter().copied() {
             let item = tcx.hir_item(item_id);
-            let item_def_id = item.owner_id.to_def_id();
+            let item_def_id = item_id.owner_id.to_def_id();
             self.record_usage(current, UsageHit::new_definition(item_def_id, item.span));
-
-            for hit in reachability::collect_item_usages(tcx, item) {
-                self.record_usage(current, hit);
-            }
 
             if let ItemKind::Mod(_, _) = item.kind {
                 let child = LocalModId::new_unchecked(item.owner_id.def_id);
                 self.collect_module(tcx, child, level.saturating_add(1), current);
+            } else {
+                for hit in reachability::collect_item_usages(tcx, item) {
+                    self.record_usage(current, hit);
+                }
             }
         }
     }
