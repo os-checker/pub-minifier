@@ -160,6 +160,13 @@ impl Modules {
                 // Skip items that are not locally defined.
                 continue;
             }
+            if matches!(
+                tcx.def_kind(def_id),
+                DefKind::Impl { .. } | DefKind::Ctor(..)
+            ) {
+                // Skip items that we're not interested at.
+                continue;
+            }
             let shallowest = item
                 .used_in_modules
                 .keys()

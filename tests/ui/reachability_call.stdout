@@ -245,11 +245,6 @@
       "shallowest_mod": "reachability_call"
     },
     {
-      "item": "reachability_call::api::Worker",
-      "kind": "implementation",
-      "shallowest_mod": "reachability_call::api"
-    },
-    {
       "item": "reachability_call::api",
       "kind": "module",
       "shallowest_mod": "reachability_call"
