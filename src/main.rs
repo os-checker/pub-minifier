@@ -26,6 +26,9 @@ fn main() {
 /// Collects module reachability data from HIR and writes the final JSON output.
 fn analysis(tcx: TyCtxt) -> ControlFlow<()> {
     let modules = collector::Modules::collect(tcx);
-    out::out(&modules.out(tcx));
+    out::out(&out::Out {
+        modules: modules.out(tcx),
+        items: modules.local_ancestor(tcx),
+    });
     ControlFlow::Continue(())
 }

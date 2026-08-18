@@ -1,239 +1,288 @@
-[
-  {
-    "level": 1,
-    "name": "reachability_call",
-    "items": [
-      {
-        "item": "reachability_call::api",
-        "kind": "module",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_call.rs:1:1: 19:2"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_call::api::Worker",
-        "kind": "struct",
-        "usages": [
-          {
-            "reachability": "TypeAnnotation",
-            "spans": [
-              "$DIR/reachability_call.rs:25:13: 25:24"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_call::api::Worker::new",
-        "kind": "associated function",
-        "usages": [
-          {
-            "reachability": "Call",
-            "spans": [
-              "$DIR/reachability_call.rs:25:13: 25:29"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_call::api::Worker::run",
-        "kind": "method",
-        "usages": [
-          {
-            "reachability": "Call",
-            "spans": [
-              "$DIR/reachability_call.rs:26:5: 26:12"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_call::api::free_fn",
-        "kind": "function",
-        "usages": [
-          {
-            "reachability": "Call",
-            "spans": [
-              "$DIR/reachability_call.rs:22:5: 22:17"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_call::api::nested::ping",
-        "kind": "function",
-        "usages": [
-          {
-            "reachability": "Call",
-            "spans": [
-              "$DIR/reachability_call.rs:23:5: 23:22"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_call::main",
-        "kind": "function",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_call.rs:21:1: 27:2"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_call::std",
-        "kind": "extern crate",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "no-location"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_call::{use#0}",
-        "kind": "import",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "no-location"
-            ]
-          }
-        ]
-      }
-    ],
-    "parent_mod": "reachability_call"
-  },
-  {
-    "level": 2,
-    "name": "reachability_call::api",
-    "items": [
-      {
-        "item": "reachability_call::api::Worker",
-        "kind": "implementation",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_call.rs:6:5: 14:6"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_call::api::Worker",
-        "kind": "struct",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_call.rs:4:5: 4:23"
-            ]
-          },
-          {
-            "reachability": "TypeAnnotation",
-            "spans": [
-              "$DIR/reachability_call.rs:6:10: 6:16"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_call::api::Worker",
-        "kind": "unit struct",
-        "usages": [
-          {
-            "reachability": "Construct",
-            "spans": [
-              "$DIR/reachability_call.rs:8:13: 8:19"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_call::api::Worker::new",
-        "kind": "associated function",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_call.rs:7:9: 9:10"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_call::api::Worker::run",
-        "kind": "method",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_call.rs:11:9: 13:10"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_call::api::free_fn",
-        "kind": "function",
-        "usages": [
-          {
-            "reachability": "Call",
-            "spans": [
-              "$DIR/reachability_call.rs:12:13: 12:20"
-            ]
-          },
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_call.rs:2:5: 2:24"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_call::api::nested",
-        "kind": "module",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_call.rs:16:5: 18:6"
-            ]
-          }
-        ]
-      }
-    ],
-    "parent_mod": "reachability_call"
-  },
-  {
-    "level": 3,
-    "name": "reachability_call::api::nested",
-    "items": [
-      {
-        "item": "reachability_call::api::nested::ping",
-        "kind": "function",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_call.rs:17:9: 17:25"
-            ]
-          }
-        ]
-      }
-    ],
-    "parent_mod": "reachability_call::api"
-  }
-]
+{
+  "modules": [
+    {
+      "level": 1,
+      "name": "reachability_call",
+      "items": [
+        {
+          "item": "reachability_call::api",
+          "kind": "module",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_call.rs:1:1: 19:2"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_call::api::Worker",
+          "kind": "struct",
+          "usages": [
+            {
+              "reachability": "TypeAnnotation",
+              "spans": [
+                "$DIR/reachability_call.rs:25:13: 25:24"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_call::api::Worker::new",
+          "kind": "associated function",
+          "usages": [
+            {
+              "reachability": "Call",
+              "spans": [
+                "$DIR/reachability_call.rs:25:13: 25:29"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_call::api::Worker::run",
+          "kind": "method",
+          "usages": [
+            {
+              "reachability": "Call",
+              "spans": [
+                "$DIR/reachability_call.rs:26:5: 26:12"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_call::api::free_fn",
+          "kind": "function",
+          "usages": [
+            {
+              "reachability": "Call",
+              "spans": [
+                "$DIR/reachability_call.rs:22:5: 22:17"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_call::api::nested::ping",
+          "kind": "function",
+          "usages": [
+            {
+              "reachability": "Call",
+              "spans": [
+                "$DIR/reachability_call.rs:23:5: 23:22"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_call::main",
+          "kind": "function",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_call.rs:21:1: 27:2"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_call::std",
+          "kind": "extern crate",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "no-location"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_call::{use#0}",
+          "kind": "import",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "no-location"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "reachability_call"
+    },
+    {
+      "level": 2,
+      "name": "reachability_call::api",
+      "items": [
+        {
+          "item": "reachability_call::api::Worker",
+          "kind": "implementation",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_call.rs:6:5: 14:6"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_call::api::Worker",
+          "kind": "struct",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_call.rs:4:5: 4:23"
+              ]
+            },
+            {
+              "reachability": "TypeAnnotation",
+              "spans": [
+                "$DIR/reachability_call.rs:6:10: 6:16"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_call::api::Worker",
+          "kind": "unit struct",
+          "usages": [
+            {
+              "reachability": "Construct",
+              "spans": [
+                "$DIR/reachability_call.rs:8:13: 8:19"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_call::api::Worker::new",
+          "kind": "associated function",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_call.rs:7:9: 9:10"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_call::api::Worker::run",
+          "kind": "method",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_call.rs:11:9: 13:10"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_call::api::free_fn",
+          "kind": "function",
+          "usages": [
+            {
+              "reachability": "Call",
+              "spans": [
+                "$DIR/reachability_call.rs:12:13: 12:20"
+              ]
+            },
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_call.rs:2:5: 2:24"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_call::api::nested",
+          "kind": "module",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_call.rs:16:5: 18:6"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "reachability_call"
+    },
+    {
+      "level": 3,
+      "name": "reachability_call::api::nested",
+      "items": [
+        {
+          "item": "reachability_call::api::nested::ping",
+          "kind": "function",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_call.rs:17:9: 17:25"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "reachability_call::api"
+    }
+  ],
+  "items": [
+    {
+      "item": "reachability_call::api::nested::ping",
+      "kind": "function",
+      "shallowest_mod": "reachability_call"
+    },
+    {
+      "item": "reachability_call::api",
+      "kind": "module",
+      "shallowest_mod": "reachability_call"
+    },
+    {
+      "item": "reachability_call::api::nested",
+      "kind": "module",
+      "shallowest_mod": "reachability_call::api"
+    },
+    {
+      "item": "reachability_call::{use#0}",
+      "kind": "import",
+      "shallowest_mod": "reachability_call"
+    },
+    {
+      "item": "reachability_call::api::Worker::run",
+      "kind": "method",
+      "shallowest_mod": "reachability_call"
+    },
+    {
+      "item": "reachability_call::api::Worker",
+      "kind": "struct",
+      "shallowest_mod": "reachability_call"
+    },
+    {
+      "item": "reachability_call::main",
+      "kind": "function",
+      "shallowest_mod": "reachability_call"
+    },
+    {
+      "item": "reachability_call::api::Worker::new",
+      "kind": "associated function",
+      "shallowest_mod": "reachability_call"
+    },
+    {
+      "item": "reachability_call::api::free_fn",
+      "kind": "function",
+      "shallowest_mod": "reachability_call"
+    }
+  ]
+}

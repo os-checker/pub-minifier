@@ -4,13 +4,14 @@ use itertools::Itertools;
 use rustc_data_structures::fx::FxHashMap;
 use rustc_hir::{
     ItemKind, Mod,
+    def::DefKind,
     def_id::{CRATE_MOD_ID, DefId, LocalModId},
 };
 use rustc_middle::ty::TyCtxt;
 use rustc_span::Span;
 
 use crate::{
-    out::{OutItemUsage, OutModule, OutUsage, def_path_str, span_to_string},
+    out::{OutItemUsage, OutLocalAncestor, OutModule, OutUsage, def_path_str, span_to_string},
     reachability::{self, Reachability, UsageHit},
 };
 
@@ -109,6 +110,83 @@ impl Modules {
             .sorted()
             .collect()
     }
+
+    fn local_item_usage(&self) -> Items<'_> {
+        let mut map = Items::with_capacity_and_hasher(512, Default::default());
+        for (&local_mod_id, module) in &self.map {
+            for (&def_id, usage) in &module.items {
+                let mut def_span = None;
+                if let Some(v_span) = usage.usage.get(&Reachability::Definition) {
+                    assert!(
+                        v_span.len() == 1,
+                        "The def span of {def_id:?} should be unique, \
+                         but got multiple def spans:\n{v_span:?}"
+                    );
+                    def_span = Some(v_span[0]);
+                }
+                map.entry(def_id)
+                    .and_modify(|def| {
+                        if let Some(span) = def_span {
+                            assert!(
+                                def.def_span.is_none(),
+                                "{def_id:?} should be defined only once, \
+                                 but there are two def spans: {:?} and {span:?}",
+                                def.def_span,
+                            );
+                            def.def_span = def_span;
+                        }
+                        let inserted = def.used_in_modules.insert(local_mod_id, usage);
+                        assert!(
+                            inserted.is_none(),
+                            "{local_mod_id:?} shouldn't be inserted twice: {usage:?} and {inserted:?}"
+                        );
+                    })
+                    .or_insert_with(|| LocalItemUsage {
+                        def_span,
+                        def_in_module: def_span.map(|_| local_mod_id),
+                        used_in_modules: FxHashMap::from_iter([(local_mod_id, usage)]),
+                    });
+            }
+        }
+        map
+    }
+
+    pub fn local_ancestor(&self, tcx: TyCtxt) -> Vec<OutLocalAncestor> {
+        let local_items = self.local_item_usage();
+        let mut map =
+            LocalAncestor::with_capacity_and_hasher(local_items.len(), Default::default());
+        for (def_id, item) in local_items {
+            if item.def_span.is_none() {
+                // Skip items that are not locally defined.
+                continue;
+            }
+            if matches!(
+                tcx.def_kind(def_id),
+                DefKind::Impl { .. }
+                    | DefKind::Ctor(..)
+                    | DefKind::ExternCrate
+                    | DefKind::ForeignTy
+                    | DefKind::ForeignMod
+            ) {
+                // Skip items that we're not interested at.
+                continue;
+            }
+            let shallowest = item
+                .used_in_modules
+                .keys()
+                .map(|m| (*m, self.map.get(m).unwrap().level))
+                .min_by_key(|key| key.1);
+            let shallowest_id = shallowest.unwrap().0;
+            map.insert(def_id, shallowest_id);
+        }
+        map.into_iter()
+            .map(|(item_id, local_mod_id)| OutLocalAncestor {
+                item: def_path_str(item_id, tcx),
+                kind: tcx.def_kind_descr(tcx.def_kind(item_id), item_id).into(),
+                shallowest_mod: def_path_str(local_mod_id.to_def_id(), tcx),
+            })
+            .collect()
+    }
 }
 
 #[derive(Debug)]
@@ -138,3 +216,16 @@ impl ItemUsage {
         self.usage.iter()
     }
 }
+
+/// DefId can be external, because items can be imported
+type Items<'a> = FxHashMap<DefId, LocalItemUsage<'a>>;
+
+struct LocalItemUsage<'a> {
+    def_span: Option<Span>,
+    def_in_module: Option<LocalModId>,
+    used_in_modules: FxHashMap<LocalModId, &'a ItemUsage>,
+}
+
+/// Only locally defined items will be here.
+/// The LocalModId is the shallowest
+type LocalAncestor = FxHashMap<DefId, LocalModId>;

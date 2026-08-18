@@ -40,6 +40,12 @@ pub fn span_to_string(tcx: TyCtxt, span: Span) -> String {
 }
 
 #[derive(Debug, Deserialize, Serialize, PartialEq, Eq, PartialOrd, Ord)]
+pub struct Out {
+    pub modules: Vec<OutModule>,
+    pub items: Vec<OutLocalAncestor>,
+}
+
+#[derive(Debug, Deserialize, Serialize, PartialEq, Eq, PartialOrd, Ord)]
 pub struct OutUsage {
     pub reachability: String,
     pub spans: Vec<String>,
@@ -58,4 +64,11 @@ pub struct OutModule {
     pub name: String,
     pub items: Vec<OutItemUsage>,
     pub parent_mod: String,
+}
+
+#[derive(Debug, Deserialize, Serialize, PartialEq, Eq, PartialOrd, Ord)]
+pub struct OutLocalAncestor {
+    pub item: String,
+    pub kind: Cow<'static, str>,
+    pub shallowest_mod: String,
 }
