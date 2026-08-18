@@ -225,11 +225,6 @@
       "item": "reachability_construct::main",
       "kind": "function",
       "shallowest_mod": "reachability_construct"
-    },
-    {
-      "item": "reachability_construct::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "reachability_construct"
     }
   ]
 }

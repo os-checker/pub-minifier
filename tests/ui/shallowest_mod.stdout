@@ -303,11 +303,6 @@
       "shallowest_mod": "shallowest_mod"
     },
     {
-      "item": "shallowest_mod::local::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "shallowest_mod::local"
-    },
-    {
       "item": "shallowest_mod::main",
       "kind": "function",
       "shallowest_mod": "shallowest_mod"
@@ -321,21 +316,6 @@
       "item": "shallowest_mod::nested::inner",
       "kind": "module",
       "shallowest_mod": "shallowest_mod::nested"
-    },
-    {
-      "item": "shallowest_mod::nested::inner::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "shallowest_mod::nested::inner"
-    },
-    {
-      "item": "shallowest_mod::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "shallowest_mod"
-    },
-    {
-      "item": "shallowest_mod::{use#1}",
-      "kind": "import",
-      "shallowest_mod": "shallowest_mod"
     }
   ]
 }

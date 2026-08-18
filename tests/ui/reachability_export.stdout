@@ -224,23 +224,8 @@
       "shallowest_mod": "reachability_export"
     },
     {
-      "item": "reachability_export::exports::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "reachability_export::exports"
-    },
-    {
-      "item": "reachability_export::exports::{use#1}",
-      "kind": "import",
-      "shallowest_mod": "reachability_export::exports"
-    },
-    {
       "item": "reachability_export::main",
       "kind": "function",
-      "shallowest_mod": "reachability_export"
-    },
-    {
-      "item": "reachability_export::{use#0}",
-      "kind": "import",
       "shallowest_mod": "reachability_export"
     }
   ]

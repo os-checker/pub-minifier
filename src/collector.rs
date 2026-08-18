@@ -162,7 +162,8 @@ impl Modules {
             }
             if matches!(
                 tcx.def_kind(def_id),
-                DefKind::Impl { .. }
+                DefKind::Use
+                    | DefKind::Impl { .. }
                     | DefKind::Ctor(..)
                     | DefKind::ExternCrate
                     | DefKind::ForeignTy

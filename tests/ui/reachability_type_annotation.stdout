@@ -245,11 +245,6 @@
       "item": "reachability_type_annotation::ty_defs::nested::N",
       "kind": "struct",
       "shallowest_mod": "reachability_type_annotation"
-    },
-    {
-      "item": "reachability_type_annotation::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "reachability_type_annotation"
     }
   ]
 }

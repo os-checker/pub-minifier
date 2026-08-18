@@ -143,11 +143,6 @@
       "item": "modules::main",
       "kind": "function",
       "shallowest_mod": "modules"
-    },
-    {
-      "item": "modules::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "modules"
     }
   ]
 }

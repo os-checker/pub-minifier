@@ -404,11 +404,6 @@
       "shallowest_mod": "reachability_import"
     },
     {
-      "item": "reachability_import::local::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "reachability_import::local"
-    },
-    {
       "item": "reachability_import::main",
       "kind": "function",
       "shallowest_mod": "reachability_import"
@@ -426,21 +421,6 @@
     {
       "item": "reachability_import::nested::inner::make_c",
       "kind": "function",
-      "shallowest_mod": "reachability_import"
-    },
-    {
-      "item": "reachability_import::nested::inner::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "reachability_import::nested::inner"
-    },
-    {
-      "item": "reachability_import::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "reachability_import"
-    },
-    {
-      "item": "reachability_import::{use#1}",
-      "kind": "import",
       "shallowest_mod": "reachability_import"
     }
   ]
