@@ -212,33 +212,8 @@
   ],
   "items": [
     {
-      "item": "reachability_type_annotation::ty_defs",
-      "kind": "module",
-      "shallowest_mod": "reachability_type_annotation"
-    },
-    {
-      "item": "reachability_type_annotation::ty_defs::nested::N",
-      "kind": "struct",
-      "shallowest_mod": "reachability_type_annotation"
-    },
-    {
-      "item": "reachability_type_annotation::ty_defs::E",
-      "kind": "enum",
-      "shallowest_mod": "reachability_type_annotation"
-    },
-    {
       "item": "reachability_type_annotation::main",
       "kind": "function",
-      "shallowest_mod": "reachability_type_annotation"
-    },
-    {
-      "item": "reachability_type_annotation::ty_defs::nested",
-      "kind": "module",
-      "shallowest_mod": "reachability_type_annotation::ty_defs"
-    },
-    {
-      "item": "reachability_type_annotation::{use#0}",
-      "kind": "import",
       "shallowest_mod": "reachability_type_annotation"
     },
     {
@@ -247,8 +222,33 @@
       "shallowest_mod": "reachability_type_annotation"
     },
     {
+      "item": "reachability_type_annotation::ty_defs",
+      "kind": "module",
+      "shallowest_mod": "reachability_type_annotation"
+    },
+    {
+      "item": "reachability_type_annotation::ty_defs::E",
+      "kind": "enum",
+      "shallowest_mod": "reachability_type_annotation"
+    },
+    {
       "item": "reachability_type_annotation::ty_defs::S",
       "kind": "struct",
+      "shallowest_mod": "reachability_type_annotation"
+    },
+    {
+      "item": "reachability_type_annotation::ty_defs::nested",
+      "kind": "module",
+      "shallowest_mod": "reachability_type_annotation::ty_defs"
+    },
+    {
+      "item": "reachability_type_annotation::ty_defs::nested::N",
+      "kind": "struct",
+      "shallowest_mod": "reachability_type_annotation"
+    },
+    {
+      "item": "reachability_type_annotation::{use#0}",
+      "kind": "import",
       "shallowest_mod": "reachability_type_annotation"
     }
   ]

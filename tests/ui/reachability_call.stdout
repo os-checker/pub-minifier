@@ -240,28 +240,8 @@
   ],
   "items": [
     {
-      "item": "reachability_call::api::nested::ping",
-      "kind": "function",
-      "shallowest_mod": "reachability_call"
-    },
-    {
       "item": "reachability_call::api",
       "kind": "module",
-      "shallowest_mod": "reachability_call"
-    },
-    {
-      "item": "reachability_call::api::nested",
-      "kind": "module",
-      "shallowest_mod": "reachability_call::api"
-    },
-    {
-      "item": "reachability_call::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "reachability_call"
-    },
-    {
-      "item": "reachability_call::api::Worker::run",
-      "kind": "method",
       "shallowest_mod": "reachability_call"
     },
     {
@@ -270,18 +250,38 @@
       "shallowest_mod": "reachability_call"
     },
     {
-      "item": "reachability_call::main",
-      "kind": "function",
-      "shallowest_mod": "reachability_call"
-    },
-    {
       "item": "reachability_call::api::Worker::new",
       "kind": "associated function",
       "shallowest_mod": "reachability_call"
     },
     {
+      "item": "reachability_call::api::Worker::run",
+      "kind": "method",
+      "shallowest_mod": "reachability_call"
+    },
+    {
       "item": "reachability_call::api::free_fn",
       "kind": "function",
+      "shallowest_mod": "reachability_call"
+    },
+    {
+      "item": "reachability_call::api::nested",
+      "kind": "module",
+      "shallowest_mod": "reachability_call::api"
+    },
+    {
+      "item": "reachability_call::api::nested::ping",
+      "kind": "function",
+      "shallowest_mod": "reachability_call"
+    },
+    {
+      "item": "reachability_call::main",
+      "kind": "function",
+      "shallowest_mod": "reachability_call"
+    },
+    {
+      "item": "reachability_call::{use#0}",
+      "kind": "import",
       "shallowest_mod": "reachability_call"
     }
   ]

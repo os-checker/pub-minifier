@@ -120,22 +120,7 @@
   ],
   "items": [
     {
-      "item": "modules::main",
-      "kind": "function",
-      "shallowest_mod": "modules"
-    },
-    {
-      "item": "modules::a::b::c",
-      "kind": "module",
-      "shallowest_mod": "modules::a::b"
-    },
-    {
       "item": "modules::a",
-      "kind": "module",
-      "shallowest_mod": "modules"
-    },
-    {
-      "item": "modules::d",
       "kind": "module",
       "shallowest_mod": "modules"
     },
@@ -143,6 +128,21 @@
       "item": "modules::a::b",
       "kind": "module",
       "shallowest_mod": "modules::a"
+    },
+    {
+      "item": "modules::a::b::c",
+      "kind": "module",
+      "shallowest_mod": "modules::a::b"
+    },
+    {
+      "item": "modules::d",
+      "kind": "module",
+      "shallowest_mod": "modules"
+    },
+    {
+      "item": "modules::main",
+      "kind": "function",
+      "shallowest_mod": "modules"
     },
     {
       "item": "modules::{use#0}",
