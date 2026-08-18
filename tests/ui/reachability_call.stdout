@@ -28,6 +28,18 @@
         ]
       },
       {
+        "item": "reachability_call::api::Worker::new",
+        "kind": "associated function",
+        "usages": [
+          {
+            "reachability": "Call",
+            "spans": [
+              "$DIR/reachability_call.rs:25:13: 25:29"
+            ]
+          }
+        ]
+      },
+      {
         "item": "reachability_call::api::Worker::run",
         "kind": "method",
         "usages": [
