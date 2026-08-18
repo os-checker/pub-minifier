@@ -135,11 +135,6 @@
       "shallowest_mod": "modules"
     },
     {
-      "item": "modules::std",
-      "kind": "extern crate",
-      "shallowest_mod": "modules"
-    },
-    {
       "item": "modules::d",
       "kind": "module",
       "shallowest_mod": "modules"

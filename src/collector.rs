@@ -162,7 +162,11 @@ impl Modules {
             }
             if matches!(
                 tcx.def_kind(def_id),
-                DefKind::Impl { .. } | DefKind::Ctor(..)
+                DefKind::Impl { .. }
+                    | DefKind::Ctor(..)
+                    | DefKind::ExternCrate
+                    | DefKind::ForeignTy
+                    | DefKind::ForeignMod
             ) {
                 // Skip items that we're not interested at.
                 continue;

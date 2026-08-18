@@ -242,11 +242,6 @@
       "shallowest_mod": "reachability_type_annotation"
     },
     {
-      "item": "reachability_type_annotation::std",
-      "kind": "extern crate",
-      "shallowest_mod": "reachability_type_annotation"
-    },
-    {
       "item": "reachability_type_annotation::takes_s",
       "kind": "function",
       "shallowest_mod": "reachability_type_annotation"

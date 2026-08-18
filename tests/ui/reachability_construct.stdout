@@ -222,11 +222,6 @@
       "shallowest_mod": "reachability_construct"
     },
     {
-      "item": "reachability_construct::std",
-      "kind": "extern crate",
-      "shallowest_mod": "reachability_construct"
-    },
-    {
       "item": "reachability_construct::main",
       "kind": "function",
       "shallowest_mod": "reachability_construct"

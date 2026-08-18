@@ -295,11 +295,6 @@
       "shallowest_mod": "reachability_definition"
     },
     {
-      "item": "reachability_definition::std",
-      "kind": "extern crate",
-      "shallowest_mod": "reachability_definition"
-    },
-    {
       "item": "reachability_definition::level1::level2::Holder",
       "kind": "struct",
       "shallowest_mod": "reachability_definition::level1::level2"

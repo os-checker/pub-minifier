@@ -270,11 +270,6 @@
       "shallowest_mod": "reachability_call"
     },
     {
-      "item": "reachability_call::std",
-      "kind": "extern crate",
-      "shallowest_mod": "reachability_call"
-    },
-    {
       "item": "reachability_call::main",
       "kind": "function",
       "shallowest_mod": "reachability_call"

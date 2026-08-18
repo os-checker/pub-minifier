@@ -234,11 +234,6 @@
       "shallowest_mod": "reachability_export"
     },
     {
-      "item": "reachability_export::std",
-      "kind": "extern crate",
-      "shallowest_mod": "reachability_export"
-    },
-    {
       "item": "reachability_export::main",
       "kind": "function",
       "shallowest_mod": "reachability_export"
