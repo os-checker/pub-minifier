@@ -97,17 +97,17 @@ impl Modules {
                                     .iter()
                                     .copied()
                                     .map(|span| span_to_string(tcx, span))
-                                    .sorted()
+                                    .sorted_unstable()
                                     .collect(),
                             })
-                            .sorted()
+                            .sorted_unstable()
                             .collect(),
                     })
-                    .sorted()
+                    .sorted_unstable()
                     .collect(),
                 parent_mod: def_path_str(val.parent.to_def_id(), tcx),
             })
-            .sorted()
+            .sorted_unstable()
             .collect()
     }
 
