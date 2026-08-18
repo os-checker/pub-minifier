@@ -1,119 +1,158 @@
-[
-  {
-    "level": 1,
-    "name": "modules",
-    "items": [
-      {
-        "item": "modules::a",
-        "kind": "module",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/modules.rs:1:1: 5:2"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "modules::d",
-        "kind": "module",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/modules.rs:7:1: 7:9"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "modules::main",
-        "kind": "function",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/modules.rs:9:1: 9:13"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "modules::std",
-        "kind": "extern crate",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "no-location"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "modules::{use#0}",
-        "kind": "import",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "no-location"
-            ]
-          }
-        ]
-      }
-    ],
-    "parent_mod": "modules"
-  },
-  {
-    "level": 2,
-    "name": "modules::a",
-    "items": [
-      {
-        "item": "modules::a::b",
-        "kind": "module",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/modules.rs:2:5: 4:6"
-            ]
-          }
-        ]
-      }
-    ],
-    "parent_mod": "modules"
-  },
-  {
-    "level": 2,
-    "name": "modules::d",
-    "items": [],
-    "parent_mod": "modules"
-  },
-  {
-    "level": 3,
-    "name": "modules::a::b",
-    "items": [
-      {
-        "item": "modules::a::b::c",
-        "kind": "module",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/modules.rs:3:9: 3:17"
-            ]
-          }
-        ]
-      }
-    ],
-    "parent_mod": "modules::a"
-  },
-  {
-    "level": 4,
-    "name": "modules::a::b::c",
-    "items": [],
-    "parent_mod": "modules::a::b"
-  }
-]
+{
+  "modules": [
+    {
+      "level": 1,
+      "name": "modules",
+      "items": [
+        {
+          "item": "modules::a",
+          "kind": "module",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/modules.rs:1:1: 5:2"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "modules::d",
+          "kind": "module",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/modules.rs:7:1: 7:9"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "modules::main",
+          "kind": "function",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/modules.rs:9:1: 9:13"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "modules::std",
+          "kind": "extern crate",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "no-location"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "modules::{use#0}",
+          "kind": "import",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "no-location"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "modules"
+    },
+    {
+      "level": 2,
+      "name": "modules::a",
+      "items": [
+        {
+          "item": "modules::a::b",
+          "kind": "module",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/modules.rs:2:5: 4:6"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "modules"
+    },
+    {
+      "level": 2,
+      "name": "modules::d",
+      "items": [],
+      "parent_mod": "modules"
+    },
+    {
+      "level": 3,
+      "name": "modules::a::b",
+      "items": [
+        {
+          "item": "modules::a::b::c",
+          "kind": "module",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/modules.rs:3:9: 3:17"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "modules::a"
+    },
+    {
+      "level": 4,
+      "name": "modules::a::b::c",
+      "items": [],
+      "parent_mod": "modules::a::b"
+    }
+  ],
+  "items": [
+    {
+      "item": "modules::main",
+      "kind": "function",
+      "shallowest_mod": "modules"
+    },
+    {
+      "item": "modules::a::b::c",
+      "kind": "module",
+      "shallowest_mod": "modules::a::b"
+    },
+    {
+      "item": "modules::a",
+      "kind": "module",
+      "shallowest_mod": "modules"
+    },
+    {
+      "item": "modules::std",
+      "kind": "extern crate",
+      "shallowest_mod": "modules"
+    },
+    {
+      "item": "modules::d",
+      "kind": "module",
+      "shallowest_mod": "modules"
+    },
+    {
+      "item": "modules::a::b",
+      "kind": "module",
+      "shallowest_mod": "modules::a"
+    },
+    {
+      "item": "modules::{use#0}",
+      "kind": "import",
+      "shallowest_mod": "modules"
+    }
+  ]
+}

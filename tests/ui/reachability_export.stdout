@@ -1,198 +1,252 @@
-[
-  {
-    "level": 1,
-    "name": "reachability_export",
-    "items": [
-      {
-        "item": "reachability_export::defs",
-        "kind": "module",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_export.rs:1:1: 7:2"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_export::defs::Item",
-        "kind": "unit struct",
-        "usages": [
-          {
-            "reachability": "Construct",
-            "spans": [
-              "$DIR/reachability_export.rs:15:13: 15:26"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_export::defs::inner::Deep",
-        "kind": "unit struct",
-        "usages": [
-          {
-            "reachability": "Construct",
-            "spans": [
-              "$DIR/reachability_export.rs:16:13: 16:26"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_export::exports",
-        "kind": "module",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_export.rs:9:1: 12:2"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_export::main",
-        "kind": "function",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_export.rs:14:1: 17:2"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_export::std",
-        "kind": "extern crate",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "no-location"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_export::{use#0}",
-        "kind": "import",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "no-location"
-            ]
-          }
-        ]
-      }
-    ],
-    "parent_mod": "reachability_export"
-  },
-  {
-    "level": 2,
-    "name": "reachability_export::defs",
-    "items": [
-      {
-        "item": "reachability_export::defs::Item",
-        "kind": "struct",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_export.rs:2:5: 2:21"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_export::defs::inner",
-        "kind": "module",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_export.rs:4:5: 6:6"
-            ]
-          }
-        ]
-      }
-    ],
-    "parent_mod": "reachability_export"
-  },
-  {
-    "level": 2,
-    "name": "reachability_export::exports",
-    "items": [
-      {
-        "item": "reachability_export::defs::Item",
-        "kind": "struct",
-        "usages": [
-          {
-            "reachability": "Export",
-            "spans": [
-              "$DIR/reachability_export.rs:10:13: 10:30"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_export::defs::inner::Deep",
-        "kind": "struct",
-        "usages": [
-          {
-            "reachability": "Export",
-            "spans": [
-              "$DIR/reachability_export.rs:11:13: 11:37"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_export::exports::{use#0}",
-        "kind": "import",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_export.rs:10:5: 10:31"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_export::exports::{use#1}",
-        "kind": "import",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_export.rs:11:5: 11:38"
-            ]
-          }
-        ]
-      }
-    ],
-    "parent_mod": "reachability_export"
-  },
-  {
-    "level": 3,
-    "name": "reachability_export::defs::inner",
-    "items": [
-      {
-        "item": "reachability_export::defs::inner::Deep",
-        "kind": "struct",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_export.rs:5:9: 5:25"
-            ]
-          }
-        ]
-      }
-    ],
-    "parent_mod": "reachability_export::defs"
-  }
-]
+{
+  "modules": [
+    {
+      "level": 1,
+      "name": "reachability_export",
+      "items": [
+        {
+          "item": "reachability_export::defs",
+          "kind": "module",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_export.rs:1:1: 7:2"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_export::defs::Item",
+          "kind": "unit struct",
+          "usages": [
+            {
+              "reachability": "Construct",
+              "spans": [
+                "$DIR/reachability_export.rs:15:13: 15:26"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_export::defs::inner::Deep",
+          "kind": "unit struct",
+          "usages": [
+            {
+              "reachability": "Construct",
+              "spans": [
+                "$DIR/reachability_export.rs:16:13: 16:26"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_export::exports",
+          "kind": "module",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_export.rs:9:1: 12:2"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_export::main",
+          "kind": "function",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_export.rs:14:1: 17:2"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_export::std",
+          "kind": "extern crate",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "no-location"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_export::{use#0}",
+          "kind": "import",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "no-location"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "reachability_export"
+    },
+    {
+      "level": 2,
+      "name": "reachability_export::defs",
+      "items": [
+        {
+          "item": "reachability_export::defs::Item",
+          "kind": "struct",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_export.rs:2:5: 2:21"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_export::defs::inner",
+          "kind": "module",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_export.rs:4:5: 6:6"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "reachability_export"
+    },
+    {
+      "level": 2,
+      "name": "reachability_export::exports",
+      "items": [
+        {
+          "item": "reachability_export::defs::Item",
+          "kind": "struct",
+          "usages": [
+            {
+              "reachability": "Export",
+              "spans": [
+                "$DIR/reachability_export.rs:10:13: 10:30"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_export::defs::inner::Deep",
+          "kind": "struct",
+          "usages": [
+            {
+              "reachability": "Export",
+              "spans": [
+                "$DIR/reachability_export.rs:11:13: 11:37"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_export::exports::{use#0}",
+          "kind": "import",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_export.rs:10:5: 10:31"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_export::exports::{use#1}",
+          "kind": "import",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_export.rs:11:5: 11:38"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "reachability_export"
+    },
+    {
+      "level": 3,
+      "name": "reachability_export::defs::inner",
+      "items": [
+        {
+          "item": "reachability_export::defs::inner::Deep",
+          "kind": "struct",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_export.rs:5:9: 5:25"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "reachability_export::defs"
+    }
+  ],
+  "items": [
+    {
+      "item": "reachability_export::exports::{use#1}",
+      "kind": "import",
+      "shallowest_mod": "reachability_export::exports"
+    },
+    {
+      "item": "reachability_export::defs::inner::Deep",
+      "kind": "struct",
+      "shallowest_mod": "reachability_export::exports"
+    },
+    {
+      "item": "reachability_export::defs",
+      "kind": "module",
+      "shallowest_mod": "reachability_export"
+    },
+    {
+      "item": "reachability_export::exports::{use#0}",
+      "kind": "import",
+      "shallowest_mod": "reachability_export::exports"
+    },
+    {
+      "item": "reachability_export::defs::inner",
+      "kind": "module",
+      "shallowest_mod": "reachability_export::defs"
+    },
+    {
+      "item": "reachability_export::{use#0}",
+      "kind": "import",
+      "shallowest_mod": "reachability_export"
+    },
+    {
+      "item": "reachability_export::exports",
+      "kind": "module",
+      "shallowest_mod": "reachability_export"
+    },
+    {
+      "item": "reachability_export::std",
+      "kind": "extern crate",
+      "shallowest_mod": "reachability_export"
+    },
+    {
+      "item": "reachability_export::main",
+      "kind": "function",
+      "shallowest_mod": "reachability_export"
+    },
+    {
+      "item": "reachability_export::defs::Item",
+      "kind": "struct",
+      "shallowest_mod": "reachability_export::exports"
+    }
+  ]
+}

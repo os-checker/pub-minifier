@@ -1,211 +1,260 @@
-[
-  {
-    "level": 1,
-    "name": "reachability_type_annotation",
-    "items": [
-      {
-        "item": "reachability_type_annotation::main",
-        "kind": "function",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:14:1: 20:2"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_type_annotation::std",
-        "kind": "extern crate",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "no-location"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_type_annotation::takes_s",
-        "kind": "function",
-        "usages": [
-          {
-            "reachability": "Call",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:19:5: 19:12"
-            ]
-          },
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:12:1: 12:29"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_type_annotation::ty_defs",
-        "kind": "module",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:1:1: 10:2"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_type_annotation::ty_defs::E",
-        "kind": "enum",
-        "usages": [
-          {
-            "reachability": "TypeAnnotation",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:16:13: 16:23"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_type_annotation::ty_defs::E::A",
-        "kind": "unit variant",
-        "usages": [
-          {
-            "reachability": "Construct",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:16:26: 16:39"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_type_annotation::ty_defs::S",
-        "kind": "struct",
-        "usages": [
-          {
-            "reachability": "TypeAnnotation",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:12:15: 12:25",
-              "$DIR/reachability_type_annotation.rs:15:13: 15:23"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_type_annotation::ty_defs::S",
-        "kind": "unit struct",
-        "usages": [
-          {
-            "reachability": "Construct",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:15:26: 15:36",
-              "$DIR/reachability_type_annotation.rs:19:13: 19:23"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_type_annotation::ty_defs::nested::N",
-        "kind": "struct",
-        "usages": [
-          {
-            "reachability": "TypeAnnotation",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:17:13: 17:31"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_type_annotation::ty_defs::nested::N",
-        "kind": "unit struct",
-        "usages": [
-          {
-            "reachability": "Construct",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:17:34: 17:52"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_type_annotation::{use#0}",
-        "kind": "import",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "no-location"
-            ]
-          }
-        ]
-      }
-    ],
-    "parent_mod": "reachability_type_annotation"
-  },
-  {
-    "level": 2,
-    "name": "reachability_type_annotation::ty_defs",
-    "items": [
-      {
-        "item": "reachability_type_annotation::ty_defs::E",
-        "kind": "enum",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:3:5: 5:6"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_type_annotation::ty_defs::S",
-        "kind": "struct",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:2:5: 2:18"
-            ]
-          }
-        ]
-      },
-      {
-        "item": "reachability_type_annotation::ty_defs::nested",
-        "kind": "module",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:7:5: 9:6"
-            ]
-          }
-        ]
-      }
-    ],
-    "parent_mod": "reachability_type_annotation"
-  },
-  {
-    "level": 3,
-    "name": "reachability_type_annotation::ty_defs::nested",
-    "items": [
-      {
-        "item": "reachability_type_annotation::ty_defs::nested::N",
-        "kind": "struct",
-        "usages": [
-          {
-            "reachability": "Definition",
-            "spans": [
-              "$DIR/reachability_type_annotation.rs:8:9: 8:22"
-            ]
-          }
-        ]
-      }
-    ],
-    "parent_mod": "reachability_type_annotation::ty_defs"
-  }
-]
+{
+  "modules": [
+    {
+      "level": 1,
+      "name": "reachability_type_annotation",
+      "items": [
+        {
+          "item": "reachability_type_annotation::main",
+          "kind": "function",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_type_annotation.rs:14:1: 20:2"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_type_annotation::std",
+          "kind": "extern crate",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "no-location"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_type_annotation::takes_s",
+          "kind": "function",
+          "usages": [
+            {
+              "reachability": "Call",
+              "spans": [
+                "$DIR/reachability_type_annotation.rs:19:5: 19:12"
+              ]
+            },
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_type_annotation.rs:12:1: 12:29"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_type_annotation::ty_defs",
+          "kind": "module",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_type_annotation.rs:1:1: 10:2"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_type_annotation::ty_defs::E",
+          "kind": "enum",
+          "usages": [
+            {
+              "reachability": "TypeAnnotation",
+              "spans": [
+                "$DIR/reachability_type_annotation.rs:16:13: 16:23"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_type_annotation::ty_defs::E::A",
+          "kind": "unit variant",
+          "usages": [
+            {
+              "reachability": "Construct",
+              "spans": [
+                "$DIR/reachability_type_annotation.rs:16:26: 16:39"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_type_annotation::ty_defs::S",
+          "kind": "struct",
+          "usages": [
+            {
+              "reachability": "TypeAnnotation",
+              "spans": [
+                "$DIR/reachability_type_annotation.rs:12:15: 12:25",
+                "$DIR/reachability_type_annotation.rs:15:13: 15:23"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_type_annotation::ty_defs::S",
+          "kind": "unit struct",
+          "usages": [
+            {
+              "reachability": "Construct",
+              "spans": [
+                "$DIR/reachability_type_annotation.rs:15:26: 15:36",
+                "$DIR/reachability_type_annotation.rs:19:13: 19:23"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_type_annotation::ty_defs::nested::N",
+          "kind": "struct",
+          "usages": [
+            {
+              "reachability": "TypeAnnotation",
+              "spans": [
+                "$DIR/reachability_type_annotation.rs:17:13: 17:31"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_type_annotation::ty_defs::nested::N",
+          "kind": "unit struct",
+          "usages": [
+            {
+              "reachability": "Construct",
+              "spans": [
+                "$DIR/reachability_type_annotation.rs:17:34: 17:52"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_type_annotation::{use#0}",
+          "kind": "import",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "no-location"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "reachability_type_annotation"
+    },
+    {
+      "level": 2,
+      "name": "reachability_type_annotation::ty_defs",
+      "items": [
+        {
+          "item": "reachability_type_annotation::ty_defs::E",
+          "kind": "enum",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_type_annotation.rs:3:5: 5:6"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_type_annotation::ty_defs::S",
+          "kind": "struct",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_type_annotation.rs:2:5: 2:18"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "reachability_type_annotation::ty_defs::nested",
+          "kind": "module",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_type_annotation.rs:7:5: 9:6"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "reachability_type_annotation"
+    },
+    {
+      "level": 3,
+      "name": "reachability_type_annotation::ty_defs::nested",
+      "items": [
+        {
+          "item": "reachability_type_annotation::ty_defs::nested::N",
+          "kind": "struct",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/reachability_type_annotation.rs:8:9: 8:22"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "reachability_type_annotation::ty_defs"
+    }
+  ],
+  "items": [
+    {
+      "item": "reachability_type_annotation::ty_defs",
+      "kind": "module",
+      "shallowest_mod": "reachability_type_annotation"
+    },
+    {
+      "item": "reachability_type_annotation::ty_defs::nested::N",
+      "kind": "struct",
+      "shallowest_mod": "reachability_type_annotation"
+    },
+    {
+      "item": "reachability_type_annotation::ty_defs::E",
+      "kind": "enum",
+      "shallowest_mod": "reachability_type_annotation"
+    },
+    {
+      "item": "reachability_type_annotation::main",
+      "kind": "function",
+      "shallowest_mod": "reachability_type_annotation"
+    },
+    {
+      "item": "reachability_type_annotation::ty_defs::nested",
+      "kind": "module",
+      "shallowest_mod": "reachability_type_annotation::ty_defs"
+    },
+    {
+      "item": "reachability_type_annotation::{use#0}",
+      "kind": "import",
+      "shallowest_mod": "reachability_type_annotation"
+    },
+    {
+      "item": "reachability_type_annotation::std",
+      "kind": "extern crate",
+      "shallowest_mod": "reachability_type_annotation"
+    },
+    {
+      "item": "reachability_type_annotation::takes_s",
+      "kind": "function",
+      "shallowest_mod": "reachability_type_annotation"
+    },
+    {
+      "item": "reachability_type_annotation::ty_defs::S",
+      "kind": "struct",
+      "shallowest_mod": "reachability_type_annotation"
+    }
+  ]
+}
