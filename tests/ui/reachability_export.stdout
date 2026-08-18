@@ -199,24 +199,14 @@
   ],
   "items": [
     {
-      "item": "reachability_export::exports::{use#1}",
-      "kind": "import",
-      "shallowest_mod": "reachability_export::exports"
-    },
-    {
-      "item": "reachability_export::defs::inner::Deep",
-      "kind": "struct",
-      "shallowest_mod": "reachability_export::exports"
-    },
-    {
       "item": "reachability_export::defs",
       "kind": "module",
       "shallowest_mod": "reachability_export"
     },
     {
-      "item": "reachability_export::exports::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "reachability_export::exports"
+      "item": "reachability_export::defs::Item",
+      "kind": "struct",
+      "shallowest_mod": "reachability_export"
     },
     {
       "item": "reachability_export::defs::inner",
@@ -224,8 +214,8 @@
       "shallowest_mod": "reachability_export::defs"
     },
     {
-      "item": "reachability_export::{use#0}",
-      "kind": "import",
+      "item": "reachability_export::defs::inner::Deep",
+      "kind": "struct",
       "shallowest_mod": "reachability_export"
     },
     {
@@ -237,11 +227,6 @@
       "item": "reachability_export::main",
       "kind": "function",
       "shallowest_mod": "reachability_export"
-    },
-    {
-      "item": "reachability_export::defs::Item",
-      "kind": "struct",
-      "shallowest_mod": "reachability_export::exports"
     }
   ]
 }

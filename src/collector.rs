@@ -1,7 +1,7 @@
 //! Aggregates per-module item usage and converts collected data into stable output structures.
 
 use itertools::Itertools;
-use rustc_data_structures::fx::FxHashMap;
+use rustc_data_structures::fx::{FxHashMap, FxHashSet};
 use rustc_hir::{
     ItemKind, Mod,
     def::DefKind,
@@ -97,17 +97,17 @@ impl Modules {
                                     .iter()
                                     .copied()
                                     .map(|span| span_to_string(tcx, span))
-                                    .sorted()
+                                    .sorted_unstable()
                                     .collect(),
                             })
-                            .sorted()
+                            .sorted_unstable()
                             .collect(),
                     })
-                    .sorted()
+                    .sorted_unstable()
                     .collect(),
                 parent_mod: def_path_str(val.parent.to_def_id(), tcx),
             })
-            .sorted()
+            .sorted_unstable()
             .collect()
     }
 
@@ -162,7 +162,8 @@ impl Modules {
             }
             if matches!(
                 tcx.def_kind(def_id),
-                DefKind::Impl { .. }
+                DefKind::Use
+                    | DefKind::Impl { .. }
                     | DefKind::Ctor(..)
                     | DefKind::ExternCrate
                     | DefKind::ForeignTy
@@ -171,12 +172,8 @@ impl Modules {
                 // Skip items that we're not interested at.
                 continue;
             }
-            let shallowest = item
-                .used_in_modules
-                .keys()
-                .map(|m| (*m, self.map.get(m).unwrap().level))
-                .min_by_key(|key| key.1);
-            let shallowest_id = shallowest.unwrap().0;
+
+            let shallowest_id = self.shallowest_mod(item.used_in_modules.into_keys());
             map.insert(def_id, shallowest_id);
         }
         map.into_iter()
@@ -185,7 +182,40 @@ impl Modules {
                 kind: tcx.def_kind_descr(tcx.def_kind(item_id), item_id).into(),
                 shallowest_mod: def_path_str(local_mod_id.to_def_id(), tcx),
             })
+            .sorted_unstable()
             .collect()
+    }
+
+    fn shallowest_mod(&self, v_mod: impl IntoIterator<Item = LocalModId>) -> LocalModId {
+        let mut buf = FxHashSet::with_capacity_and_hasher(self.map.len(), Default::default());
+        v_mod
+            .into_iter()
+            .reduce(|shallow, m| self.pick_shallow_mod(shallow, m, &mut buf))
+            .unwrap()
+    }
+
+    fn pick_shallow_mod(
+        &self,
+        m1: LocalModId,
+        m2: LocalModId,
+        buf: &mut FxHashSet<LocalModId>,
+    ) -> LocalModId {
+        buf.clear();
+        let mut target = m1;
+        loop {
+            if !buf.insert(target) {
+                break;
+            }
+            target = self.map.get(&target).unwrap().parent;
+        }
+        target = m2;
+        loop {
+            // Each local module must derive from the root.
+            if buf.contains(&target) {
+                return target;
+            }
+            target = self.map.get(&target).unwrap().parent;
+        }
     }
 }
 

@@ -197,13 +197,18 @@
   ],
   "items": [
     {
+      "item": "reachability_construct::ctor",
+      "kind": "module",
+      "shallowest_mod": "reachability_construct"
+    },
+    {
       "item": "reachability_construct::ctor::E",
       "kind": "enum",
       "shallowest_mod": "reachability_construct::ctor"
     },
     {
-      "item": "reachability_construct::ctor",
-      "kind": "module",
+      "item": "reachability_construct::ctor::Named",
+      "kind": "struct",
       "shallowest_mod": "reachability_construct"
     },
     {
@@ -212,24 +217,14 @@
       "shallowest_mod": "reachability_construct::ctor"
     },
     {
-      "item": "reachability_construct::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "reachability_construct"
-    },
-    {
-      "item": "reachability_construct::ctor::Named",
+      "item": "reachability_construct::ctor::Unit",
       "kind": "struct",
-      "shallowest_mod": "reachability_construct"
+      "shallowest_mod": "reachability_construct::ctor"
     },
     {
       "item": "reachability_construct::main",
       "kind": "function",
       "shallowest_mod": "reachability_construct"
-    },
-    {
-      "item": "reachability_construct::ctor::Unit",
-      "kind": "struct",
-      "shallowest_mod": "reachability_construct::ctor"
     }
   ]
 }

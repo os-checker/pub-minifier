@@ -369,9 +369,9 @@
       "shallowest_mod": "reachability_import"
     },
     {
-      "item": "reachability_import::local::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "reachability_import::local"
+      "item": "reachability_import::defs::A",
+      "kind": "struct",
+      "shallowest_mod": "reachability_import"
     },
     {
       "item": "reachability_import::defs::mid",
@@ -379,9 +379,9 @@
       "shallowest_mod": "reachability_import::defs"
     },
     {
-      "item": "reachability_import::nested::inner",
-      "kind": "module",
-      "shallowest_mod": "reachability_import::nested"
+      "item": "reachability_import::defs::mid::B",
+      "kind": "struct",
+      "shallowest_mod": "reachability_import"
     },
     {
       "item": "reachability_import::defs::mid::deep",
@@ -389,13 +389,13 @@
       "shallowest_mod": "reachability_import::defs::mid"
     },
     {
-      "item": "reachability_import::main",
-      "kind": "function",
+      "item": "reachability_import::defs::mid::deep::C",
+      "kind": "struct",
       "shallowest_mod": "reachability_import"
     },
     {
-      "item": "reachability_import::{use#1}",
-      "kind": "import",
+      "item": "reachability_import::local",
+      "kind": "module",
       "shallowest_mod": "reachability_import"
     },
     {
@@ -404,39 +404,19 @@
       "shallowest_mod": "reachability_import"
     },
     {
-      "item": "reachability_import::defs::A",
-      "kind": "struct",
-      "shallowest_mod": "reachability_import"
-    },
-    {
-      "item": "reachability_import::defs::mid::B",
-      "kind": "struct",
-      "shallowest_mod": "reachability_import::local"
-    },
-    {
-      "item": "reachability_import::nested::inner::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "reachability_import::nested::inner"
-    },
-    {
-      "item": "reachability_import::defs::mid::deep::C",
-      "kind": "struct",
-      "shallowest_mod": "reachability_import::nested::inner"
-    },
-    {
-      "item": "reachability_import::local",
-      "kind": "module",
-      "shallowest_mod": "reachability_import"
-    },
-    {
-      "item": "reachability_import::{use#0}",
-      "kind": "import",
+      "item": "reachability_import::main",
+      "kind": "function",
       "shallowest_mod": "reachability_import"
     },
     {
       "item": "reachability_import::nested",
       "kind": "module",
       "shallowest_mod": "reachability_import"
+    },
+    {
+      "item": "reachability_import::nested::inner",
+      "kind": "module",
+      "shallowest_mod": "reachability_import::nested"
     },
     {
       "item": "reachability_import::nested::inner::make_c",

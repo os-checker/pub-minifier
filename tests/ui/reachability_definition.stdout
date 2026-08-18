@@ -255,28 +255,8 @@
   ],
   "items": [
     {
-      "item": "reachability_definition::main",
-      "kind": "function",
-      "shallowest_mod": "reachability_definition"
-    },
-    {
-      "item": "reachability_definition::level1::Shape",
-      "kind": "enum",
-      "shallowest_mod": "reachability_definition::level1"
-    },
-    {
       "item": "reachability_definition::level1",
       "kind": "module",
-      "shallowest_mod": "reachability_definition"
-    },
-    {
-      "item": "reachability_definition::level1::level2",
-      "kind": "module",
-      "shallowest_mod": "reachability_definition::level1"
-    },
-    {
-      "item": "reachability_definition::level1::level2::make_holder",
-      "kind": "function",
       "shallowest_mod": "reachability_definition"
     },
     {
@@ -285,14 +265,19 @@
       "shallowest_mod": "reachability_definition::level1"
     },
     {
-      "item": "reachability_definition::level1::use_fields",
-      "kind": "function",
-      "shallowest_mod": "reachability_definition"
+      "item": "reachability_definition::level1::Point",
+      "kind": "struct",
+      "shallowest_mod": "reachability_definition::level1"
     },
     {
-      "item": "reachability_definition::{use#0}",
-      "kind": "import",
-      "shallowest_mod": "reachability_definition"
+      "item": "reachability_definition::level1::Shape",
+      "kind": "enum",
+      "shallowest_mod": "reachability_definition::level1"
+    },
+    {
+      "item": "reachability_definition::level1::level2",
+      "kind": "module",
+      "shallowest_mod": "reachability_definition::level1"
     },
     {
       "item": "reachability_definition::level1::level2::Holder",
@@ -300,9 +285,19 @@
       "shallowest_mod": "reachability_definition::level1::level2"
     },
     {
-      "item": "reachability_definition::level1::Point",
-      "kind": "struct",
-      "shallowest_mod": "reachability_definition::level1"
+      "item": "reachability_definition::level1::level2::make_holder",
+      "kind": "function",
+      "shallowest_mod": "reachability_definition"
+    },
+    {
+      "item": "reachability_definition::level1::use_fields",
+      "kind": "function",
+      "shallowest_mod": "reachability_definition"
+    },
+    {
+      "item": "reachability_definition::main",
+      "kind": "function",
+      "shallowest_mod": "reachability_definition"
     }
   ]
 }
