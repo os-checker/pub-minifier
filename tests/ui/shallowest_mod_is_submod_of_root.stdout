@@ -1,0 +1,139 @@
+{
+  "modules": [
+    {
+      "level": 1,
+      "name": "shallowest_mod_is_submod_of_root",
+      "items": [
+        {
+          "item": "shallowest_mod_is_submod_of_root::a",
+          "kind": "module",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/shallowest_mod_is_submod_of_root.rs:1:1: 6:2"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "shallowest_mod_is_submod_of_root::main",
+          "kind": "function",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/shallowest_mod_is_submod_of_root.rs:8:1: 8:13"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "shallowest_mod_is_submod_of_root::std",
+          "kind": "extern crate",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "no-location"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "shallowest_mod_is_submod_of_root::{use#0}",
+          "kind": "import",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "no-location"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "shallowest_mod_is_submod_of_root"
+    },
+    {
+      "level": 2,
+      "name": "shallowest_mod_is_submod_of_root::a",
+      "items": [
+        {
+          "item": "shallowest_mod_is_submod_of_root::a::b",
+          "kind": "module",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/shallowest_mod_is_submod_of_root.rs:2:5: 4:6"
+              ]
+            }
+          ]
+        },
+        {
+          "item": "shallowest_mod_is_submod_of_root::a::{use#0}",
+          "kind": "import",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/shallowest_mod_is_submod_of_root.rs:5:5: 5:22"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "shallowest_mod_is_submod_of_root"
+    },
+    {
+      "level": 3,
+      "name": "shallowest_mod_is_submod_of_root::a::b",
+      "items": [
+        {
+          "item": "shallowest_mod_is_submod_of_root::a::b::foo",
+          "kind": "function",
+          "usages": [
+            {
+              "reachability": "Definition",
+              "spans": [
+                "$DIR/shallowest_mod_is_submod_of_root.rs:3:9: 3:24"
+              ]
+            }
+          ]
+        }
+      ],
+      "parent_mod": "shallowest_mod_is_submod_of_root::a"
+    }
+  ],
+  "items": [
+    {
+      "item": "shallowest_mod_is_submod_of_root::a",
+      "kind": "module",
+      "visibility": "pub(crate)",
+      "restricted_vis": "",
+      "shallowest_mod": "shallowest_mod_is_submod_of_root"
+    },
+    {
+      "item": "shallowest_mod_is_submod_of_root::a::b",
+      "kind": "module",
+      "visibility": "pub(in crate::a)",
+      "restricted_vis": "",
+      "shallowest_mod": "shallowest_mod_is_submod_of_root::a"
+    },
+    {
+      "item": "shallowest_mod_is_submod_of_root::a::b::foo",
+      "kind": "function",
+      "visibility": "pub",
+      "restricted_vis": "",
+      "shallowest_mod": "shallowest_mod_is_submod_of_root::a::b"
+    },
+    {
+      "item": "shallowest_mod_is_submod_of_root::main",
+      "kind": "function",
+      "visibility": "pub(crate)",
+      "restricted_vis": "",
+      "shallowest_mod": "shallowest_mod_is_submod_of_root"
+    }
+  ]
+}

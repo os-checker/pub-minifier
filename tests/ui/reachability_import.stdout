@@ -366,61 +366,85 @@
     {
       "item": "reachability_import::defs",
       "kind": "module",
+      "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_import"
     },
     {
       "item": "reachability_import::defs::A",
       "kind": "struct",
+      "visibility": "pub",
+      "restricted_vis": "pub(super)",
       "shallowest_mod": "reachability_import"
     },
     {
       "item": "reachability_import::defs::mid",
       "kind": "module",
+      "visibility": "pub",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_import::defs"
     },
     {
       "item": "reachability_import::defs::mid::B",
       "kind": "struct",
+      "visibility": "pub",
+      "restricted_vis": "pub(in crate)",
       "shallowest_mod": "reachability_import"
     },
     {
       "item": "reachability_import::defs::mid::deep",
       "kind": "module",
+      "visibility": "pub",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_import::defs::mid"
     },
     {
       "item": "reachability_import::defs::mid::deep::C",
       "kind": "struct",
+      "visibility": "pub",
+      "restricted_vis": "pub(in crate)",
       "shallowest_mod": "reachability_import"
     },
     {
       "item": "reachability_import::local",
       "kind": "module",
+      "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_import"
     },
     {
       "item": "reachability_import::local::make_b",
       "kind": "function",
+      "visibility": "pub",
+      "restricted_vis": "pub(super)",
       "shallowest_mod": "reachability_import"
     },
     {
       "item": "reachability_import::main",
       "kind": "function",
+      "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_import"
     },
     {
       "item": "reachability_import::nested",
       "kind": "module",
+      "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_import"
     },
     {
       "item": "reachability_import::nested::inner",
       "kind": "module",
+      "visibility": "pub",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_import::nested"
     },
     {
       "item": "reachability_import::nested::inner::make_c",
       "kind": "function",
+      "visibility": "pub",
+      "restricted_vis": "pub(in crate)",
       "shallowest_mod": "reachability_import"
     }
   ]

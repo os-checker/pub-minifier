@@ -242,41 +242,57 @@
     {
       "item": "reachability_call::api",
       "kind": "module",
+      "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_call"
     },
     {
       "item": "reachability_call::api::Worker",
       "kind": "struct",
+      "visibility": "pub",
+      "restricted_vis": "pub(super)",
       "shallowest_mod": "reachability_call"
     },
     {
       "item": "reachability_call::api::Worker::new",
       "kind": "associated function",
+      "visibility": "pub",
+      "restricted_vis": "pub(super)",
       "shallowest_mod": "reachability_call"
     },
     {
       "item": "reachability_call::api::Worker::run",
       "kind": "method",
+      "visibility": "pub",
+      "restricted_vis": "pub(super)",
       "shallowest_mod": "reachability_call"
     },
     {
       "item": "reachability_call::api::free_fn",
       "kind": "function",
+      "visibility": "pub",
+      "restricted_vis": "pub(super)",
       "shallowest_mod": "reachability_call"
     },
     {
       "item": "reachability_call::api::nested",
       "kind": "module",
+      "visibility": "pub",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_call::api"
     },
     {
       "item": "reachability_call::api::nested::ping",
       "kind": "function",
+      "visibility": "pub",
+      "restricted_vis": "pub(in crate)",
       "shallowest_mod": "reachability_call"
     },
     {
       "item": "reachability_call::main",
       "kind": "function",
+      "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_call"
     }
   ]
