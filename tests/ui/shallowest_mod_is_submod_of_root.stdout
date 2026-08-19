@@ -72,6 +72,18 @@
           ]
         },
         {
+          "item": "shallowest_mod_is_submod_of_root::a::b::foo",
+          "kind": "function",
+          "usages": [
+            {
+              "reachability": "Import",
+              "spans": [
+                "$DIR/shallowest_mod_is_submod_of_root.rs:5:9: 5:21"
+              ]
+            }
+          ]
+        },
+        {
           "item": "shallowest_mod_is_submod_of_root::a::{use#0}",
           "kind": "import",
           "usages": [
@@ -125,8 +137,8 @@
       "item": "shallowest_mod_is_submod_of_root::a::b::foo",
       "kind": "function",
       "visibility": "pub",
-      "restricted_vis": "",
-      "shallowest_mod": "shallowest_mod_is_submod_of_root::a::b"
+      "restricted_vis": "pub(super)",
+      "shallowest_mod": "shallowest_mod_is_submod_of_root::a"
     },
     {
       "item": "shallowest_mod_is_submod_of_root::main",
