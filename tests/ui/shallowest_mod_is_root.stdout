@@ -2,70 +2,70 @@
   "modules": [
     {
       "level": 1,
-      "name": "shallowest_mod",
+      "name": "shallowest_mod_is_root",
       "items": [
         {
-          "item": "shallowest_mod::defs",
+          "item": "shallowest_mod_is_root::defs",
           "kind": "module",
           "usages": [
             {
               "reachability": "Definition",
               "spans": [
-                "$DIR/shallowest_mod.rs:1:1: 11:2"
+                "$DIR/shallowest_mod_is_root.rs:1:1: 11:2"
               ]
             }
           ]
         },
         {
-          "item": "shallowest_mod::defs::A",
+          "item": "shallowest_mod_is_root::defs::A",
           "kind": "struct",
           "usages": [
             {
               "reachability": "Import",
               "spans": [
-                "$DIR/shallowest_mod.rs:13:5: 13:12"
+                "$DIR/shallowest_mod_is_root.rs:13:5: 13:12"
               ]
             }
           ]
         },
         {
-          "item": "shallowest_mod::local",
+          "item": "shallowest_mod_is_root::local",
           "kind": "module",
           "usages": [
             {
               "reachability": "Definition",
               "spans": [
-                "$DIR/shallowest_mod.rs:15:1: 17:2"
+                "$DIR/shallowest_mod_is_root.rs:15:1: 17:2"
               ]
             }
           ]
         },
         {
-          "item": "shallowest_mod::main",
+          "item": "shallowest_mod_is_root::main",
           "kind": "function",
           "usages": [
             {
               "reachability": "Definition",
               "spans": [
-                "$DIR/shallowest_mod.rs:25:1: 25:13"
+                "$DIR/shallowest_mod_is_root.rs:25:1: 25:13"
               ]
             }
           ]
         },
         {
-          "item": "shallowest_mod::nested",
+          "item": "shallowest_mod_is_root::nested",
           "kind": "module",
           "usages": [
             {
               "reachability": "Definition",
               "spans": [
-                "$DIR/shallowest_mod.rs:19:1: 23:2"
+                "$DIR/shallowest_mod_is_root.rs:19:1: 23:2"
               ]
             }
           ]
         },
         {
-          "item": "shallowest_mod::std",
+          "item": "shallowest_mod_is_root::std",
           "kind": "extern crate",
           "usages": [
             {
@@ -77,7 +77,7 @@
           ]
         },
         {
-          "item": "shallowest_mod::{use#0}",
+          "item": "shallowest_mod_is_root::{use#0}",
           "kind": "import",
           "usages": [
             {
@@ -89,253 +89,253 @@
           ]
         },
         {
-          "item": "shallowest_mod::{use#1}",
+          "item": "shallowest_mod_is_root::{use#1}",
           "kind": "import",
           "usages": [
             {
               "reachability": "Definition",
               "spans": [
-                "$DIR/shallowest_mod.rs:13:1: 13:13"
+                "$DIR/shallowest_mod_is_root.rs:13:1: 13:13"
               ]
             }
           ]
         }
       ],
-      "parent_mod": "shallowest_mod"
+      "parent_mod": "shallowest_mod_is_root"
     },
     {
       "level": 2,
-      "name": "shallowest_mod::defs",
+      "name": "shallowest_mod_is_root::defs",
       "items": [
         {
-          "item": "shallowest_mod::defs::A",
+          "item": "shallowest_mod_is_root::defs::A",
           "kind": "struct",
           "usages": [
             {
               "reachability": "Definition",
               "spans": [
-                "$DIR/shallowest_mod.rs:2:5: 2:18"
+                "$DIR/shallowest_mod_is_root.rs:2:5: 2:18"
               ]
             }
           ]
         },
         {
-          "item": "shallowest_mod::defs::mid",
+          "item": "shallowest_mod_is_root::defs::mid",
           "kind": "module",
           "usages": [
             {
               "reachability": "Definition",
               "spans": [
-                "$DIR/shallowest_mod.rs:4:5: 10:6"
+                "$DIR/shallowest_mod_is_root.rs:4:5: 10:6"
               ]
             }
           ]
         }
       ],
-      "parent_mod": "shallowest_mod"
+      "parent_mod": "shallowest_mod_is_root"
     },
     {
       "level": 2,
-      "name": "shallowest_mod::local",
+      "name": "shallowest_mod_is_root::local",
       "items": [
         {
-          "item": "shallowest_mod::defs::mid::B",
+          "item": "shallowest_mod_is_root::defs::mid::B",
           "kind": "struct",
           "usages": [
             {
               "reachability": "Import",
               "spans": [
-                "$DIR/shallowest_mod.rs:16:9: 16:28"
+                "$DIR/shallowest_mod_is_root.rs:16:9: 16:28"
               ]
             }
           ]
         },
         {
-          "item": "shallowest_mod::local::{use#0}",
+          "item": "shallowest_mod_is_root::local::{use#0}",
           "kind": "import",
           "usages": [
             {
               "reachability": "Definition",
               "spans": [
-                "$DIR/shallowest_mod.rs:16:5: 16:29"
+                "$DIR/shallowest_mod_is_root.rs:16:5: 16:29"
               ]
             }
           ]
         }
       ],
-      "parent_mod": "shallowest_mod"
+      "parent_mod": "shallowest_mod_is_root"
     },
     {
       "level": 2,
-      "name": "shallowest_mod::nested",
+      "name": "shallowest_mod_is_root::nested",
       "items": [
         {
-          "item": "shallowest_mod::nested::inner",
+          "item": "shallowest_mod_is_root::nested::inner",
           "kind": "module",
           "usages": [
             {
               "reachability": "Definition",
               "spans": [
-                "$DIR/shallowest_mod.rs:20:5: 22:6"
+                "$DIR/shallowest_mod_is_root.rs:20:5: 22:6"
               ]
             }
           ]
         }
       ],
-      "parent_mod": "shallowest_mod"
+      "parent_mod": "shallowest_mod_is_root"
     },
     {
       "level": 3,
-      "name": "shallowest_mod::defs::mid",
+      "name": "shallowest_mod_is_root::defs::mid",
       "items": [
         {
-          "item": "shallowest_mod::defs::mid::B",
+          "item": "shallowest_mod_is_root::defs::mid::B",
           "kind": "struct",
           "usages": [
             {
               "reachability": "Definition",
               "spans": [
-                "$DIR/shallowest_mod.rs:5:9: 5:22"
+                "$DIR/shallowest_mod_is_root.rs:5:9: 5:22"
               ]
             }
           ]
         },
         {
-          "item": "shallowest_mod::defs::mid::deep",
+          "item": "shallowest_mod_is_root::defs::mid::deep",
           "kind": "module",
           "usages": [
             {
               "reachability": "Definition",
               "spans": [
-                "$DIR/shallowest_mod.rs:7:9: 9:10"
+                "$DIR/shallowest_mod_is_root.rs:7:9: 9:10"
               ]
             }
           ]
         }
       ],
-      "parent_mod": "shallowest_mod::defs"
+      "parent_mod": "shallowest_mod_is_root::defs"
     },
     {
       "level": 3,
-      "name": "shallowest_mod::nested::inner",
+      "name": "shallowest_mod_is_root::nested::inner",
       "items": [
         {
-          "item": "shallowest_mod::defs::mid::deep::C",
+          "item": "shallowest_mod_is_root::defs::mid::deep::C",
           "kind": "struct",
           "usages": [
             {
               "reachability": "Import",
               "spans": [
-                "$DIR/shallowest_mod.rs:21:13: 21:38"
+                "$DIR/shallowest_mod_is_root.rs:21:13: 21:38"
               ]
             }
           ]
         },
         {
-          "item": "shallowest_mod::nested::inner::{use#0}",
+          "item": "shallowest_mod_is_root::nested::inner::{use#0}",
           "kind": "import",
           "usages": [
             {
               "reachability": "Definition",
               "spans": [
-                "$DIR/shallowest_mod.rs:21:9: 21:39"
+                "$DIR/shallowest_mod_is_root.rs:21:9: 21:39"
               ]
             }
           ]
         }
       ],
-      "parent_mod": "shallowest_mod::nested"
+      "parent_mod": "shallowest_mod_is_root::nested"
     },
     {
       "level": 4,
-      "name": "shallowest_mod::defs::mid::deep",
+      "name": "shallowest_mod_is_root::defs::mid::deep",
       "items": [
         {
-          "item": "shallowest_mod::defs::mid::deep::C",
+          "item": "shallowest_mod_is_root::defs::mid::deep::C",
           "kind": "struct",
           "usages": [
             {
               "reachability": "Definition",
               "spans": [
-                "$DIR/shallowest_mod.rs:8:13: 8:26"
+                "$DIR/shallowest_mod_is_root.rs:8:13: 8:26"
               ]
             }
           ]
         }
       ],
-      "parent_mod": "shallowest_mod::defs::mid"
+      "parent_mod": "shallowest_mod_is_root::defs::mid"
     }
   ],
   "items": [
     {
-      "item": "shallowest_mod::defs",
+      "item": "shallowest_mod_is_root::defs",
       "kind": "module",
       "visibility": "pub(crate)",
       "restricted_vis": "",
-      "shallowest_mod": "shallowest_mod"
+      "shallowest_mod": "shallowest_mod_is_root"
     },
     {
-      "item": "shallowest_mod::defs::A",
+      "item": "shallowest_mod_is_root::defs::A",
       "kind": "struct",
       "visibility": "pub",
       "restricted_vis": "pub(super)",
-      "shallowest_mod": "shallowest_mod"
+      "shallowest_mod": "shallowest_mod_is_root"
     },
     {
-      "item": "shallowest_mod::defs::mid",
+      "item": "shallowest_mod_is_root::defs::mid",
       "kind": "module",
       "visibility": "pub",
       "restricted_vis": "",
-      "shallowest_mod": "shallowest_mod::defs"
+      "shallowest_mod": "shallowest_mod_is_root::defs"
     },
     {
-      "item": "shallowest_mod::defs::mid::B",
+      "item": "shallowest_mod_is_root::defs::mid::B",
       "kind": "struct",
       "visibility": "pub",
       "restricted_vis": "pub(in crate)",
-      "shallowest_mod": "shallowest_mod"
+      "shallowest_mod": "shallowest_mod_is_root"
     },
     {
-      "item": "shallowest_mod::defs::mid::deep",
+      "item": "shallowest_mod_is_root::defs::mid::deep",
       "kind": "module",
       "visibility": "pub",
       "restricted_vis": "",
-      "shallowest_mod": "shallowest_mod::defs::mid"
+      "shallowest_mod": "shallowest_mod_is_root::defs::mid"
     },
     {
-      "item": "shallowest_mod::defs::mid::deep::C",
+      "item": "shallowest_mod_is_root::defs::mid::deep::C",
       "kind": "struct",
       "visibility": "pub",
       "restricted_vis": "pub(in crate)",
-      "shallowest_mod": "shallowest_mod"
+      "shallowest_mod": "shallowest_mod_is_root"
     },
     {
-      "item": "shallowest_mod::local",
+      "item": "shallowest_mod_is_root::local",
       "kind": "module",
       "visibility": "pub(crate)",
       "restricted_vis": "",
-      "shallowest_mod": "shallowest_mod"
+      "shallowest_mod": "shallowest_mod_is_root"
     },
     {
-      "item": "shallowest_mod::main",
+      "item": "shallowest_mod_is_root::main",
       "kind": "function",
       "visibility": "pub(crate)",
       "restricted_vis": "",
-      "shallowest_mod": "shallowest_mod"
+      "shallowest_mod": "shallowest_mod_is_root"
     },
     {
-      "item": "shallowest_mod::nested",
+      "item": "shallowest_mod_is_root::nested",
       "kind": "module",
       "visibility": "pub(crate)",
       "restricted_vis": "",
-      "shallowest_mod": "shallowest_mod"
+      "shallowest_mod": "shallowest_mod_is_root"
     },
     {
-      "item": "shallowest_mod::nested::inner",
+      "item": "shallowest_mod_is_root::nested::inner",
       "kind": "module",
       "visibility": "pub",
       "restricted_vis": "",
-      "shallowest_mod": "shallowest_mod::nested"
+      "shallowest_mod": "shallowest_mod_is_root::nested"
     }
   ]
 }
