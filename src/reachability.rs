@@ -175,7 +175,13 @@ impl<'tcx> Visitor<'tcx> for ReachabilityCollector<'tcx> {
 
     /// Handles `use` items and classifies them as import or export.
     fn visit_use(&mut self, path: &'tcx UsePath<'tcx>, hir_id: HirId) -> Self::Result {
-        let Some(res) = path.res.type_ns else { return };
+        let res = path.res;
+        let Some(res) = res.type_ns.or(res.value_ns).or(res.macro_ns) else {
+            return;
+        };
+        if res == Res::Err {
+            return;
+        }
         let reachability = if self.tcx.local_visibility(hir_id.owner.def_id).is_public() {
             Reachability::Export
         } else {
