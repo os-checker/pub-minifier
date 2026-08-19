@@ -191,12 +191,22 @@ impl Modules {
                 let defining = local_mod.defining.to_def_id();
                 assert!(
                     tcx.is_descendant_of(defining, shallowest),
-                    "{defining:?} should be a descendant of ancestor {shallowest:?}, but actually not"
+                    "{defining:?} should be a descendant of ancestor {shallowest:?}, \
+                     but actually not"
                 );
                 OutLocalAncestor {
                     item: def_path_str(item_id, tcx),
                     kind: tcx.def_kind_descr(tcx.def_kind(item_id), item_id).into(),
                     visibility: vis.to_string(CRATE_DEF_ID, tcx),
+                    restricted_vis: if defining == shallowest {
+                        "".into()
+                    } else if let Some(parent) = tcx.opt_parent(defining)
+                        && parent == shallowest
+                    {
+                        "pub(super)".into()
+                    } else {
+                        format!("pub(in crate{})", tcx.def_path_str(shallowest)).into()
+                    },
                     shallowest_mod: def_path_str(shallowest, tcx),
                 }
             })

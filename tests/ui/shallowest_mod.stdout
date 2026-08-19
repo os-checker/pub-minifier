@@ -271,60 +271,70 @@
       "item": "shallowest_mod::defs",
       "kind": "module",
       "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "shallowest_mod"
     },
     {
       "item": "shallowest_mod::defs::A",
       "kind": "struct",
       "visibility": "pub",
+      "restricted_vis": "pub(super)",
       "shallowest_mod": "shallowest_mod"
     },
     {
       "item": "shallowest_mod::defs::mid",
       "kind": "module",
       "visibility": "pub",
+      "restricted_vis": "",
       "shallowest_mod": "shallowest_mod::defs"
     },
     {
       "item": "shallowest_mod::defs::mid::B",
       "kind": "struct",
       "visibility": "pub",
+      "restricted_vis": "pub(in crate)",
       "shallowest_mod": "shallowest_mod"
     },
     {
       "item": "shallowest_mod::defs::mid::deep",
       "kind": "module",
       "visibility": "pub",
+      "restricted_vis": "",
       "shallowest_mod": "shallowest_mod::defs::mid"
     },
     {
       "item": "shallowest_mod::defs::mid::deep::C",
       "kind": "struct",
       "visibility": "pub",
+      "restricted_vis": "pub(in crate)",
       "shallowest_mod": "shallowest_mod"
     },
     {
       "item": "shallowest_mod::local",
       "kind": "module",
       "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "shallowest_mod"
     },
     {
       "item": "shallowest_mod::main",
       "kind": "function",
       "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "shallowest_mod"
     },
     {
       "item": "shallowest_mod::nested",
       "kind": "module",
       "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "shallowest_mod"
     },
     {
       "item": "shallowest_mod::nested::inner",
       "kind": "module",
       "visibility": "pub",
+      "restricted_vis": "",
       "shallowest_mod": "shallowest_mod::nested"
     }
   ]

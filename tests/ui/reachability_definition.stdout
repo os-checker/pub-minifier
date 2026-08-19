@@ -258,54 +258,63 @@
       "item": "reachability_definition::level1",
       "kind": "module",
       "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_definition"
     },
     {
       "item": "reachability_definition::level1::Bits",
       "kind": "union",
       "visibility": "pub",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_definition::level1"
     },
     {
       "item": "reachability_definition::level1::Point",
       "kind": "struct",
       "visibility": "pub",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_definition::level1"
     },
     {
       "item": "reachability_definition::level1::Shape",
       "kind": "enum",
       "visibility": "pub",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_definition::level1"
     },
     {
       "item": "reachability_definition::level1::level2",
       "kind": "module",
       "visibility": "pub",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_definition::level1"
     },
     {
       "item": "reachability_definition::level1::level2::Holder",
       "kind": "struct",
       "visibility": "pub",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_definition::level1::level2"
     },
     {
       "item": "reachability_definition::level1::level2::make_holder",
       "kind": "function",
       "visibility": "pub",
+      "restricted_vis": "pub(in crate)",
       "shallowest_mod": "reachability_definition"
     },
     {
       "item": "reachability_definition::level1::use_fields",
       "kind": "function",
       "visibility": "pub",
+      "restricted_vis": "pub(super)",
       "shallowest_mod": "reachability_definition"
     },
     {
       "item": "reachability_definition::main",
       "kind": "function",
       "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_definition"
     }
   ]

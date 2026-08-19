@@ -215,42 +215,49 @@
       "item": "reachability_type_annotation::main",
       "kind": "function",
       "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_type_annotation"
     },
     {
       "item": "reachability_type_annotation::takes_s",
       "kind": "function",
       "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_type_annotation"
     },
     {
       "item": "reachability_type_annotation::ty_defs",
       "kind": "module",
       "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_type_annotation"
     },
     {
       "item": "reachability_type_annotation::ty_defs::E",
       "kind": "enum",
       "visibility": "pub",
+      "restricted_vis": "pub(super)",
       "shallowest_mod": "reachability_type_annotation"
     },
     {
       "item": "reachability_type_annotation::ty_defs::S",
       "kind": "struct",
       "visibility": "pub",
+      "restricted_vis": "pub(super)",
       "shallowest_mod": "reachability_type_annotation"
     },
     {
       "item": "reachability_type_annotation::ty_defs::nested",
       "kind": "module",
       "visibility": "pub",
+      "restricted_vis": "",
       "shallowest_mod": "reachability_type_annotation::ty_defs"
     },
     {
       "item": "reachability_type_annotation::ty_defs::nested::N",
       "kind": "struct",
       "visibility": "pub",
+      "restricted_vis": "pub(in crate)",
       "shallowest_mod": "reachability_type_annotation"
     }
   ]

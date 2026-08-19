@@ -123,30 +123,35 @@
       "item": "modules::a",
       "kind": "module",
       "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "modules"
     },
     {
       "item": "modules::a::b",
       "kind": "module",
       "visibility": "pub(in crate::a)",
+      "restricted_vis": "",
       "shallowest_mod": "modules::a"
     },
     {
       "item": "modules::a::b::c",
       "kind": "module",
       "visibility": "pub(in crate::a::b)",
+      "restricted_vis": "",
       "shallowest_mod": "modules::a::b"
     },
     {
       "item": "modules::d",
       "kind": "module",
       "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "modules"
     },
     {
       "item": "modules::main",
       "kind": "function",
       "visibility": "pub(crate)",
+      "restricted_vis": "",
       "shallowest_mod": "modules"
     }
   ]

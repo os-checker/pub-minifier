@@ -71,5 +71,6 @@ pub struct OutLocalAncestor {
     pub item: String,
     pub kind: Cow<'static, str>,
     pub visibility: String,
+    pub restricted_vis: Cow<'static, str>,
     pub shallowest_mod: String,
 }
