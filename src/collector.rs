@@ -136,6 +136,7 @@ impl Modules {
                                 def.def_span,
                             );
                             def.def_span = def_span;
+                            def.def_in_module = Some(local_mod_id);
                         }
                         let inserted = def.used_in_modules.insert(local_mod_id, usage);
                         assert!(
@@ -158,10 +159,10 @@ impl Modules {
         let mut map =
             LocalAncestor::with_capacity_and_hasher(local_items.len(), Default::default());
         for (def_id, item) in local_items {
-            if item.def_span.is_none() {
+            let Some(defining) = item.def_in_module else {
                 // Skip items that are not locally defined.
                 continue;
-            }
+            };
             if matches!(
                 tcx.def_kind(def_id),
                 DefKind::Use
@@ -175,18 +176,28 @@ impl Modules {
                 continue;
             }
 
-            let shallowest_id = self.shallowest_mod(item.used_in_modules.into_keys());
-            map.insert(def_id, shallowest_id);
+            let shallowest = self.shallowest_mod(item.used_in_modules.into_keys());
+            let local_mod = LocalModule {
+                shallowest,
+                defining,
+            };
+            map.insert(def_id, local_mod);
         }
         map.into_iter()
-            .map(|(item_id, local_mod_id)| {
+            .map(|(item_id, local_mod)| {
                 let local_def_id = item_id.as_local().unwrap();
                 let vis = tcx.local_visibility(local_def_id);
+                let shallowest = local_mod.shallowest.to_def_id();
+                let defining = local_mod.defining.to_def_id();
+                assert!(
+                    tcx.is_descendant_of(defining, shallowest),
+                    "{defining:?} should be a descendant of ancestor {shallowest:?}, but actually not"
+                );
                 OutLocalAncestor {
                     item: def_path_str(item_id, tcx),
                     kind: tcx.def_kind_descr(tcx.def_kind(item_id), item_id).into(),
                     visibility: vis.to_string(CRATE_DEF_ID, tcx),
-                    shallowest_mod: def_path_str(local_mod_id.to_def_id(), tcx),
+                    shallowest_mod: def_path_str(shallowest, tcx),
                 }
             })
             .sorted_unstable()
@@ -265,4 +276,9 @@ struct LocalItemUsage<'a> {
 
 /// Only locally defined items will be here.
 /// The LocalModId is the shallowest
-type LocalAncestor = FxHashMap<DefId, LocalModId>;
+type LocalAncestor = FxHashMap<DefId, LocalModule>;
+
+struct LocalModule {
+    shallowest: LocalModId,
+    defining: LocalModId,
+}
